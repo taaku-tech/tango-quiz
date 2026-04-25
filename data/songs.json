@@ -5,10 +5,10 @@
     "artist": "Juan D'Arienzo y su Orquesta Típica",
     "year": 1943,
     "spotifyTrackId": "4cOdK2wGLETKBW3PvgPWqT",
-    "description": "タンゴの代名詞とも言える一曲。1916年にウルグアイの作曲家ロドリゲスが作曲し、その後多くのオーケストラが録音。ミロンガの締めに必ず流れる「最後の曲」として世界中で愛されている。フアン・ダリエンソの演奏はそのキレのあるリズムで最も有名なバージョンのひとつ。",
+    "description": "タンゴの代名詞とも言える一曲。ミロンガの締めに必ず流れる曲として世界中で親しまれている。",
     "choices": [
       { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
-      { "title": "El Choclo", "artist": "Anibal Troilo y su Orquesta Típica", "year": 1947 },
+      { "title": "El Choclo", "artist": "Angel Villoldo", "year": 1903 },
       { "title": "Libertango", "artist": "Astor Piazzolla", "year": 1974 },
       { "title": "Por una Cabeza", "artist": "Carlos Gardel", "year": 1935 }
     ]
@@ -18,27 +18,27 @@
     "title": "Por una Cabeza",
     "artist": "Carlos Gardel",
     "year": 1935,
-    "spotifyTrackId": "1RU3aFHRF6gDZVgwVLCqJm",
-    "description": "カルロス・ガルデルが1935年に作曲・歌唱した名曲。「首の差で」という意味で、競馬に例えた恋の切なさを歌う。映画『シンドラーのリスト』や『セント・オブ・ア・ウーマン』のタンゴシーンで使われ、世界的に知られるようになった。",
+    "spotifyTrackId": "4cOdK2wGLETKBW3PvgPWqT",
+    "description": "カルロス・ガルデルが1935年に発表した名曲。映画「セント・オブ・ウーマン」で使われ世界的に有名になった。",
     "choices": [
       { "title": "Por una Cabeza", "artist": "Carlos Gardel", "year": 1935 },
-      { "title": "La Cumparsita", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1952 },
-      { "title": "Malena", "artist": "Anibal Troilo y su Orquesta Típica", "year": 1942 },
-      { "title": "Nostalgias", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1936 }
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
+      { "title": "El Choclo", "artist": "Angel Villoldo", "year": 1903 },
+      { "title": "Volver", "artist": "Carlos Gardel", "year": 1935 }
     ]
   },
   {
     "id": "3",
-    "title": "El Choclo",
-    "artist": "Anibal Troilo y su Orquesta Típica",
-    "year": 1947,
-    "spotifyTrackId": "3qiyVGEqbIqYkw0AiDFNgd",
-    "description": "1903年にアルゼンチンの作曲家アンヘル・ビジョルドが作曲したタンゴの古典。「エル・チョクロ」とはスペイン語でトウモロコシのこと。アニバル・トロイロの演奏は情感豊かなバンドネオンが印象的で、黄金期タンゴの傑作とされる。",
+    "title": "Libertango",
+    "artist": "Astor Piazzolla",
+    "year": 1974,
+    "spotifyTrackId": "4cOdK2wGLETKBW3PvgPWqT",
+    "description": "ピアソラが1974年に発表したヌエボタンゴの代表作。自由（Libertad）とタンゴを組み合わせた造語がタイトル。",
     "choices": [
-      { "title": "El Choclo", "artist": "Anibal Troilo y su Orquesta Típica", "year": 1947 },
-      { "title": "Sur", "artist": "Anibal Troilo y su Orquesta Típica", "year": 1948 },
+      { "title": "Libertango", "artist": "Astor Piazzolla", "year": 1974 },
+      { "title": "Adiós Nonino", "artist": "Astor Piazzolla", "year": 1959 },
       { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
-      { "title": "A Media Luz", "artist": "Osvaldo Pugliese y su Orquesta Típica", "year": 1946 }
+      { "title": "Oblivion", "artist": "Astor Piazzolla", "year": 1982 }
     ]
   }
 ]
