@@ -12,14 +12,26 @@ export default function ChoiceButton({ choice, isCorrect, isWrong, disabled, onC
 
     window.speechSynthesis.cancel();
 
-    const text = `${choice.title}、${choice.artist}、${choice.year}年`;
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "ja-JP";
-    utterance.onstart = () => setSpeaking(true);
-    utterance.onend = () => setSpeaking(false);
-    utterance.onerror = () => setSpeaking(false);
+    const make = (text, lang) => {
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = lang;
+      return u;
+    };
 
-    window.speechSynthesis.speak(utterance);
+    const u1 = make(choice.title, "es-ES");
+    const u2 = make(choice.artist, "es-ES");
+    const u3 = make(`${choice.year}年`, "ja-JP");
+
+    u1.onstart = () => setSpeaking(true);
+    u1.onend = () => window.speechSynthesis.speak(u2);
+    u2.onend = () => window.speechSynthesis.speak(u3);
+    u3.onend = () => setSpeaking(false);
+
+    u1.onerror = () => setSpeaking(false);
+    u2.onerror = () => setSpeaking(false);
+    u3.onerror = () => setSpeaking(false);
+
+    window.speechSynthesis.speak(u1);
   };
 
   let choiceStyle = {};
