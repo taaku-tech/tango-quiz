@@ -10,16 +10,34 @@ export default function ResultScreen({ questions, score, onRestart, onShowSong }
 
   return (
     <div className="max-w-lg mx-auto px-4 pb-10 pt-6">
-      <div className="text-center py-6 bg-gray-900/60 rounded-2xl border border-gray-800 mb-6">
-        <p className="text-gray-400 text-sm mb-2">最終スコア</p>
-        <div className="text-6xl font-bold text-amber-400">
+      {/* Score card */}
+      <div
+        className="text-center py-8 rounded-2xl border-2 mb-6"
+        style={{ backgroundColor: "#1a0a0a", borderColor: "#3D0000" }}
+      >
+        <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#F5F0E8", opacity: 0.5 }}>
+          最終スコア
+        </p>
+        <div
+          className="text-6xl font-bold"
+          style={{ color: "#C9A84C", fontFamily: "var(--font-playfair)" }}
+        >
           {score}
-          <span className="text-3xl text-gray-500">/{total}</span>
+          <span className="text-3xl" style={{ color: "#F5F0E8", opacity: 0.4 }}>
+            /{total}
+          </span>
         </div>
-        <p className="text-gray-300 mt-3 text-sm">{message}</p>
+        <div className="w-12 h-px mx-auto my-4" style={{ backgroundColor: "#8B0000" }} />
+        <p className="text-sm" style={{ color: "#F5F0E8", opacity: 0.75 }}>
+          {message}
+        </p>
       </div>
 
-      <h3 className="text-gray-500 text-xs font-semibold uppercase tracking-widest mb-3">
+      {/* Song list */}
+      <h3
+        className="text-xs uppercase tracking-widest mb-3"
+        style={{ color: "#C9A84C", opacity: 0.7 }}
+      >
         出題された曲
       </h3>
       <div className="space-y-2 mb-6">
@@ -27,24 +45,41 @@ export default function ResultScreen({ questions, score, onRestart, onShowSong }
           <button
             key={song.id}
             onClick={() => onShowSong(song)}
-            className="w-full text-left bg-gray-800/50 border border-gray-700 rounded-xl px-4 py-3 active:bg-gray-700 transition-colors"
+            className="w-full text-left rounded-xl px-4 py-3 border transition-all duration-150 active:scale-[0.98] border-l-4"
+            style={{
+              backgroundColor: "#1a0a0a",
+              borderColor: "#3D0000",
+              borderLeftColor: "#8B0000",
+            }}
           >
-            <p className="font-semibold text-sm text-amber-300 leading-snug">
+            <p
+              className="font-semibold text-sm leading-snug"
+              style={{ color: "#C9A84C" }}
+            >
               {song.title}
             </p>
-            <p className="text-xs text-gray-400 mt-0.5">
+            <p className="text-xs mt-0.5" style={{ color: "#F5F0E8", opacity: 0.6 }}>
               {song.artist} · {song.year}年
             </p>
-            <p className="text-xs text-amber-600/70 mt-1">タップで解説を見る →</p>
+            <p className="text-xs mt-1" style={{ color: "#8B0000" }}>
+              タップで解説を見る →
+            </p>
           </button>
         ))}
       </div>
 
+      {/* Restart button */}
       <button
         onClick={onRestart}
-        className="w-full py-4 rounded-2xl bg-amber-600 hover:bg-amber-500 active:bg-amber-700 text-white font-bold text-lg transition-colors"
+        className="w-full py-4 rounded-xl text-base font-semibold border-2 transition-all duration-200 active:scale-[0.97]"
+        style={{
+          backgroundColor: "#8B0000",
+          borderColor: "#C9A84C",
+          color: "#C9A84C",
+          fontFamily: "var(--font-playfair)",
+        }}
       >
-        もう一度挑戦する
+        ♪ もう一度挑戦する
       </button>
     </div>
   );

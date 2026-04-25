@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import songsData from "@/data/songs.json";
+import TitleScreen from "@/components/TitleScreen";
 import ScoreBar from "@/components/ScoreBar";
 import QuizCard from "@/components/QuizCard";
 import SongModal from "@/components/SongModal";
@@ -17,6 +18,7 @@ function shuffleArray(array) {
 }
 
 export default function Home() {
+  const [showTitle, setShowTitle] = useState(true);
   const [questions, setQuestions] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -38,9 +40,15 @@ export default function Home() {
     setQuizDone(false);
   }, []);
 
-  useEffect(() => {
+  const handleStart = () => {
     initQuiz();
-  }, [initQuiz]);
+    setShowTitle(false);
+  };
+
+  const handleRestart = () => {
+    initQuiz();
+    setShowTitle(true);
+  };
 
   const handleAnswer = (choice) => {
     if (answered) return;
@@ -70,20 +78,26 @@ export default function Home() {
     setModalSong(null);
   };
 
+  if (showTitle) {
+    return <TitleScreen onStart={handleStart} />;
+  }
+
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-950 flex items-center justify-center text-gray-400">
+      <div
+        className="min-h-screen flex items-center justify-center text-sm"
+        style={{ backgroundColor: "#0a0a0a", color: "#F5F0E8", opacity: 0.5 }}
+      >
         読み込み中...
       </div>
     );
   }
 
   const currentSong = questions[currentIndex];
-  const isCorrect =
-    answered && selectedChoice?.title === currentSong.title;
+  const isCorrect = answered && selectedChoice?.title === currentSong.title;
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen" style={{ backgroundColor: "#0a0a0a", color: "#F5F0E8" }}>
       {!quizDone && (
         <ScoreBar
           current={currentIndex + 1}
@@ -96,7 +110,7 @@ export default function Home() {
         <ResultScreen
           questions={questions}
           score={score}
-          onRestart={initQuiz}
+          onRestart={handleRestart}
           onShowSong={openModal}
         />
       ) : (
@@ -112,26 +126,36 @@ export default function Home() {
           {answered && (
             <div className="mt-5 space-y-3">
               <p
-                className={`text-center text-xl font-bold ${
-                  isCorrect ? "text-green-400" : "text-red-400"
-                }`}
+                className="text-center text-xl font-bold"
+                style={{
+                  color: isCorrect ? "#C9A84C" : "#F5F0E8",
+                  fontFamily: "var(--font-playfair)",
+                }}
               >
-                {isCorrect ? "正解！🎵" : "不正解…"}
+                {isCorrect ? "✓ 正解！" : "✗ 不正解…"}
               </p>
               <div className="flex gap-3">
                 <button
                   onClick={() => openModal(currentSong)}
-                  className="flex-1 py-3 rounded-xl bg-amber-700 hover:bg-amber-600 active:bg-amber-800 text-white font-semibold text-sm transition-colors"
+                  className="flex-1 py-3 rounded-xl text-sm font-semibold border transition-all duration-150 active:scale-[0.97]"
+                  style={{
+                    backgroundColor: "#1a0a0a",
+                    borderColor: "#C9A84C",
+                    color: "#C9A84C",
+                  }}
                 >
                   この曲について
                 </button>
                 <button
                   onClick={handleNext}
-                  className="flex-1 py-3 rounded-xl bg-indigo-700 hover:bg-indigo-600 active:bg-indigo-800 text-white font-semibold text-sm transition-colors"
+                  className="flex-1 py-3 rounded-xl text-sm font-semibold border transition-all duration-150 active:scale-[0.97]"
+                  style={{
+                    backgroundColor: "#8B0000",
+                    borderColor: "#C9A84C",
+                    color: "#C9A84C",
+                  }}
                 >
-                  {currentIndex + 1 >= questions.length
-                    ? "結果を見る →"
-                    : "次へ →"}
+                  {currentIndex + 1 >= questions.length ? "結果を見る →" : "次へ →"}
                 </button>
               </div>
             </div>

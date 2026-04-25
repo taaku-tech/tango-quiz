@@ -22,7 +22,11 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
 
   return (
     <div className="pt-4 space-y-4">
-      <div className="rounded-2xl overflow-hidden bg-gray-900 border border-gray-800">
+      {/* Spotify player */}
+      <div
+        className="rounded-xl overflow-hidden border-2"
+        style={{ borderColor: "#3D0000", backgroundColor: "#1a0a0a" }}
+      >
         <iframe
           src={`https://open.spotify.com/embed/track/${song.spotifyTrackId}?utm_source=generator&theme=0`}
           width="100%"
@@ -33,12 +37,21 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
         />
       </div>
 
+      {/* Guide banner */}
       {!answered && (
-        <p className="text-center text-xs text-amber-300/80 bg-amber-950/50 border border-amber-900/60 rounded-xl px-3 py-2">
+        <p
+          className="text-center text-xs rounded-xl px-3 py-2 border"
+          style={{
+            backgroundColor: "#8B0000",
+            borderColor: "#3D0000",
+            color: "#C9A84C",
+          }}
+        >
           ▶ 再生ボタンを押して曲を聴いてください
         </p>
       )}
 
+      {/* Choices */}
       <div className="space-y-3">
         {shuffledChoices.map((choice) => (
           <ChoiceButton

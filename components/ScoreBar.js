@@ -1,13 +1,25 @@
 export default function ScoreBar({ current, total, score }) {
   return (
-    <div className="sticky top-0 z-10 bg-gray-950 border-b border-gray-800 px-4 py-3 flex items-center justify-between">
-      <span className="text-gray-400 text-sm">
+    <div
+      className="sticky top-0 z-10 border-b px-4 py-3 flex items-center justify-between"
+      style={{ backgroundColor: "#8B0000", borderColor: "#3D0000" }}
+    >
+      <span className="text-sm" style={{ color: "#F5F0E8", opacity: 0.8 }}>
         問題{" "}
-        <span className="text-white font-bold text-base">
+        <span
+          className="font-bold text-base"
+          style={{ color: "#F5F0E8", opacity: 1 }}
+        >
           {current}/{total}
         </span>
       </span>
-      <span className="text-amber-400 font-bold text-base">
+      <span
+        className="font-bold text-base"
+        style={{
+          color: "#C9A84C",
+          fontFamily: "var(--font-playfair)",
+        }}
+      >
         スコア {score}
       </span>
     </div>

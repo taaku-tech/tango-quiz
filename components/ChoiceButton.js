@@ -1,26 +1,54 @@
 export default function ChoiceButton({ choice, isCorrect, isWrong, disabled, onClick }) {
-  let classes =
-    "w-full text-left px-4 py-3 rounded-xl border-2 transition-all duration-150 ";
+  let style = {};
+  let extraClass = "w-full text-left px-4 py-3 rounded-xl border-2 transition-all duration-150 ";
 
   if (isCorrect) {
-    classes += "bg-green-900/50 border-green-500 text-green-200";
+    style = {
+      backgroundColor: "#1a4a1a",
+      borderColor: "#C9A84C",
+      color: "#C9A84C",
+    };
   } else if (isWrong) {
-    classes += "bg-red-900/50 border-red-500 text-red-200";
+    style = {
+      backgroundColor: "#3a0000",
+      borderColor: "#8B0000",
+      color: "#F5F0E8",
+      opacity: 0.7,
+    };
   } else if (disabled) {
-    classes += "bg-gray-800/30 border-gray-800 text-gray-600 cursor-default";
+    style = {
+      backgroundColor: "#120606",
+      borderColor: "#3D0000",
+      color: "#F5F0E8",
+      opacity: 0.4,
+      cursor: "default",
+    };
   } else {
-    classes +=
-      "bg-gray-800 border-gray-700 text-white active:scale-[0.98] active:bg-gray-700 cursor-pointer";
+    style = {
+      backgroundColor: "#1a0a0a",
+      borderColor: "#3D0000",
+      color: "#F5F0E8",
+      cursor: "pointer",
+    };
+    extraClass += "active:scale-[0.98]";
   }
 
   return (
     <button
-      className={classes}
+      className={extraClass}
+      style={style}
       onClick={!disabled ? onClick : undefined}
     >
-      <p className="font-semibold text-sm leading-snug">{choice.title}</p>
-      <p className="text-xs mt-1 opacity-70 leading-snug">{choice.artist}</p>
-      <p className="text-xs mt-0.5 opacity-50">{choice.year}年</p>
+      <p className="font-semibold text-sm leading-snug">
+        {isCorrect && <span className="mr-1">✓</span>}
+        {choice.title}
+      </p>
+      <p className="text-xs mt-1 leading-snug" style={{ opacity: 0.7 }}>
+        {choice.artist}
+      </p>
+      <p className="text-xs mt-0.5" style={{ opacity: 0.5 }}>
+        {choice.year}年
+      </p>
     </button>
   );
 }
