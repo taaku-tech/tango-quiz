@@ -16,17 +16,28 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
   const [shuffledChoices] = useState(() => shuffleArray(song.choices));
   const [playing, setPlaying] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const [iframeLoaded, setIframeLoaded] = useState(false);
 
-  const handlePlay = () => {
-    if (playing) return;
+  const sendCommands = () => {
     const iframe = document.querySelector("#spotify-iframe");
-    if (iframe) {
-      iframe.contentWindow.postMessage(
-        JSON.stringify({ command: "toggle" }),
-        "https://open.spotify.com"
-      );
-    }
+    if (!iframe) return;
+    iframe.contentWindow.postMessage(JSON.stringify({ command: "play" }), "*");
+    iframe.contentWindow.postMessage(JSON.stringify({ command: "toggle" }), "*");
+  };
+
+  const handlePlay = async () => {
+    if (playing) return;
     setPlaying(true);
+
+    if (!iframeLoaded) {
+      await new Promise((resolve) => setTimeout(resolve, 500));
+    }
+
+    sendCommands();
+
+    setTimeout(() => {
+      sendCommands();
+    }, 1000);
   };
 
   const handleChoiceClick = (choice) => {
@@ -49,12 +60,13 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
         {/* iframe — always in DOM, loads in background */}
         <iframe
           id="spotify-iframe"
-          src={`https://open.spotify.com/embed/track/${song.spotifyTrackId}?utm_source=generator&theme=0`}
+          src={`https://open.spotify.com/embed/track/${song.spotifyTrackId}?utm_source=generator&autoplay=0&theme=0`}
           width="100%"
           height="80"
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
+          onLoad={() => setIframeLoaded(true)}
           style={{ position: "absolute", top: 0, left: 0, display: "block" }}
         />
 
