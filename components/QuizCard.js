@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ChoiceButton from "./ChoiceButton";
 
 function shuffleArray(array) {
@@ -15,39 +15,31 @@ function shuffleArray(array) {
 export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
   const [shuffledChoices] = useState(() => shuffleArray(song.choices));
   const [playing, setPlaying] = useState(false);
-  const [revealed, setRevealed] = useState(false);
-  const [iframeLoaded, setIframeLoaded] = useState(false);
 
-  const sendCommands = () => {
-    const iframe = document.querySelector("#spotify-iframe");
-    if (!iframe) return;
-    iframe.contentWindow.postMessage(JSON.stringify({ command: "play" }), "*");
-    iframe.contentWindow.postMessage(JSON.stringify({ command: "toggle" }), "*");
-  };
-
-  const handlePlay = async () => {
-    if (playing) return;
-    setPlaying(true);
-
-    if (!iframeLoaded) {
-      await new Promise((resolve) => setTimeout(resolve, 500));
-    }
-
-    sendCommands();
-
-    setTimeout(() => {
-      sendCommands();
-    }, 1000);
-  };
+  /* Spotify Embed API から再生開始のメッセージを受信 */
+  useEffect(() => {
+    const handler = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        if (data.type === "playback_update" && !data.payload?.isPaused) {
+          setPlaying(true);
+        }
+      } catch (_) {}
+    };
+    window.addEventListener("message", handler);
+    return () => window.removeEventListener("message", handler);
+  }, []);
 
   const handleChoiceClick = (choice) => {
     if (answered) return;
     onAnswer(choice);
   };
 
+  const showGuide = !playing && !answered;
+
   return (
     <div className="pt-4 space-y-4">
-      {/* Player container — iframe + overlay stacked */}
+      {/* Player container */}
       <div
         className="rounded-xl overflow-hidden border-2"
         style={{
@@ -57,7 +49,7 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
           backgroundColor: "#1a0a0a",
         }}
       >
-        {/* iframe — always in DOM, loads in background */}
+        {/* iframe — blur before answer, clear after */}
         <iframe
           id="spotify-iframe"
           src={`https://open.spotify.com/embed/track/${song.spotifyTrackId}?utm_source=generator&autoplay=0&theme=0`}
@@ -66,62 +58,60 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-          onLoad={() => setIframeLoaded(true)}
-          style={{ position: "absolute", top: 0, left: 0, display: "block" }}
-        />
-
-        {/* Overlay — covers iframe until revealed */}
-        <div
           style={{
             position: "absolute",
-            inset: 0,
-            backgroundColor: "#0a0a0a",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            zIndex: 10,
-            opacity: revealed ? 0 : 1,
-            pointerEvents: revealed ? "none" : "auto",
-            transition: "opacity 0.4s ease",
+            top: 0,
+            left: 0,
+            display: "block",
+            filter: answered ? "none" : "blur(6px)",
+            transition: "filter 0.4s ease",
           }}
-        >
-          {!answered ? (
-            <button
-              onClick={handlePlay}
-              disabled={playing}
+        />
+
+        {/* Guide overlay — pointer-events: none so clicks reach iframe */}
+        {showGuide && (
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              pointerEvents: "none",
+              zIndex: 10,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              paddingRight: "56px",
+            }}
+          >
+            <div
               style={{
-                backgroundColor: playing ? "transparent" : "#8B0000",
-                border: "2px solid #C9A84C",
-                borderRadius: "12px",
-                padding: "8px 24px",
-                color: "#C9A84C",
-                fontSize: "14px",
-                fontWeight: "600",
-                cursor: playing ? "default" : "pointer",
-                opacity: playing ? 0.6 : 1,
-                transition: "opacity 0.2s",
+                backgroundColor: "rgba(0,0,0,0.72)",
+                border: "1px solid rgba(201,168,76,0.4)",
+                borderRadius: "8px",
+                padding: "4px 10px",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
               }}
             >
-              {playing ? "⏸ 再生中..." : "▶ 再生する"}
-            </button>
-          ) : (
-            <button
-              onClick={() => setRevealed(true)}
-              style={{
-                backgroundColor: "#8B0000",
-                border: "2px solid #C9A84C",
-                borderRadius: "12px",
-                padding: "8px 24px",
-                color: "#C9A84C",
-                fontSize: "14px",
-                fontWeight: "600",
-                cursor: "pointer",
-              }}
-            >
-              🎵 答えを確認する
-            </button>
-          )}
-        </div>
+              <span
+                style={{
+                  color: "#C9A84C",
+                  fontSize: "11px",
+                  fontWeight: "600",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                ▶ ここを押して再生
+              </span>
+              <span
+                className="animate-bounce"
+                style={{ color: "#C9A84C", fontSize: "12px" }}
+              >
+                ↓
+              </span>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Choices */}
