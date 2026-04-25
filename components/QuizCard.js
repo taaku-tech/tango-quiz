@@ -22,10 +22,7 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
 
   return (
     <div className="pt-4 space-y-4">
-      <div
-        className="rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 transition-all duration-300"
-        style={{ filter: answered ? "none" : "blur(8px)" }}
-      >
+      <div className="rounded-2xl overflow-hidden bg-gray-900 border border-gray-800">
         <iframe
           src={`https://open.spotify.com/embed/track/${song.spotifyTrackId}?utm_source=generator&theme=0`}
           width="100%"
