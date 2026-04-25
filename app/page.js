@@ -50,6 +50,11 @@ export default function Home() {
     setShowTitle(true);
   };
 
+  const handleBackToTitle = () => {
+    initQuiz();
+    setShowTitle(true);
+  };
+
   const handleAnswer = (choice) => {
     if (answered) return;
     const isCorrect = choice.title === questions[currentIndex].title;
@@ -103,6 +108,7 @@ export default function Home() {
           current={currentIndex + 1}
           total={questions.length}
           score={score}
+          onBack={handleBackToTitle}
         />
       )}
 
