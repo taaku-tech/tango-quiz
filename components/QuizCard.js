@@ -24,23 +24,23 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
 
   return (
     <div className="pt-4 space-y-4">
-      {/* iframe - off-screen while playing, visible after reveal */}
-      {(started || revealed) && (
+      {/* iframe - mounted on play click, hidden until reveal */}
+      {started && (
         <div
-          className={
+          className="rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 transition-all duration-300"
+          style={
             revealed
-              ? "rounded-2xl overflow-hidden bg-gray-900 border border-gray-800"
-              : ""
+              ? { opacity: 1, height: "152px" }
+              : { opacity: 0, height: 0, overflow: "hidden" }
           }
-          style={!revealed ? { position: "absolute", left: "-9999px" } : {}}
         >
           <iframe
-            src={`https://open.spotify.com/embed/track/${song.spotifyTrackId}?utm_source=generator`}
+            src={`https://open.spotify.com/embed/track/${song.spotifyTrackId}?autoplay=1`}
             width="100%"
             height="152"
             frameBorder="0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
+            loading="eager"
           />
         </div>
       )}
