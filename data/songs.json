@@ -5,7 +5,7 @@
     "artist": "Juan D'Arienzo y su Orquesta Típica",
     "year": 1943,
     "spotifyTrackId": "56m2q6ItHRx5HIF31YobrH",
-    "description": "タンゴの代名詞とも言える一曲。ミロンガの締めに必ず流れる曲として世界中で親しまれている。",
+    "description": "タンゴの代名詞。ミロンガの締めに必ず流れる曲として世界中で親しまれている。1916年にウルグアイの学生マトス・ロドリゲスが作曲。",
     "choices": [
       { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
       { "title": "El Choclo", "artist": "Angel Villoldo", "year": 1903 },
@@ -19,7 +19,7 @@
     "artist": "Carlos Gardel",
     "year": 1935,
     "spotifyTrackId": "6mZ30ThSCQ49DuVyVvRQe1",
-    "description": "カルロス・ガルデルが1935年に発表した名曲。映画「セント・オブ・ウーマン」で使われ世界的に有名になった。",
+    "description": "ガルデルが1935年に発表した名曲。映画「セント・オブ・ウーマン」で使われ世界的に有名になった。",
     "choices": [
       { "title": "Por una Cabeza", "artist": "Carlos Gardel", "year": 1935 },
       { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
@@ -38,6 +38,244 @@
       { "title": "Libertango", "artist": "Astor Piazzolla", "year": 1974 },
       { "title": "Adiós Nonino", "artist": "Astor Piazzolla", "year": 1959 },
       { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
+      { "title": "Oblivion", "artist": "Astor Piazzolla", "year": 1982 }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "El Choclo",
+    "artist": "Angel Villoldo",
+    "year": 1903,
+    "spotifyTrackId": "3F9IiXVhe8qvswz31cbqpM",
+    "description": "草創期タンゴの代表曲。1903年にブエノスアイレスで作曲され、タンゴの原型を伝える重要な一曲。",
+    "choices": [
+      { "title": "El Choclo", "artist": "Angel Villoldo", "year": 1903 },
+      { "title": "La Morocha", "artist": "Enrique Saborido", "year": 1905 },
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
+      { "title": "Caminito", "artist": "Juan de Dios Filiberto", "year": 1926 }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "La Morocha",
+    "artist": "Enrique Saborido",
+    "year": 1905,
+    "spotifyTrackId": "7z3cUQd26vfyzFTtTQZmSP",
+    "description": "1905年作曲の草創期タンゴ。エネルギッシュなリズムが特徴で、初期タンゴの生き生きとした雰囲気を伝える。",
+    "choices": [
+      { "title": "La Morocha", "artist": "Enrique Saborido", "year": 1905 },
+      { "title": "El Choclo", "artist": "Angel Villoldo", "year": 1903 },
+      { "title": "Caminito", "artist": "Juan de Dios Filiberto", "year": 1926 },
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 }
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Caminito",
+    "artist": "Juan de Dios Filiberto",
+    "year": 1926,
+    "spotifyTrackId": "1VahqWgtC1MPO4zWSTm8H9",
+    "description": "1926年作曲の叙情的なタンゴ。ブエノスアイレスの路地「カミニート」を舞台にした詩情あふれる名曲。",
+    "choices": [
+      { "title": "Caminito", "artist": "Juan de Dios Filiberto", "year": 1926 },
+      { "title": "La Morocha", "artist": "Enrique Saborido", "year": 1905 },
+      { "title": "El Choclo", "artist": "Angel Villoldo", "year": 1903 },
+      { "title": "Volver", "artist": "Carlos Gardel", "year": 1935 }
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Volver",
+    "artist": "Carlos Gardel",
+    "year": 1935,
+    "spotifyTrackId": "6mZ30ThSCQ49DuVyVvRQe1",
+    "description": "ガルデルの代表曲のひとつ。故郷への望郷をテーマにした歌詞が多くのファンの心を打つ。",
+    "choices": [
+      { "title": "Volver", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "El Día que me Quieras", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "Por una Cabeza", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "Caminito", "artist": "Juan de Dios Filiberto", "year": 1926 }
+    ]
+  },
+  {
+    "id": "8",
+    "title": "El Día que me Quieras",
+    "artist": "Carlos Gardel",
+    "year": 1935,
+    "spotifyTrackId": "3RDnLRkpWLIhdzD5kqFk12",
+    "description": "ガルデルが映画のために作曲した名曲。甘く切ない旋律が特徴で、タンゴカンシオンの傑作とされる。",
+    "choices": [
+      { "title": "El Día que me Quieras", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "Por una Cabeza", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "Volver", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 }
+    ]
+  },
+  {
+    "id": "9",
+    "title": "Bahía Blanca",
+    "artist": "Carlos Di Sarli y su Orquesta Típica",
+    "year": 1957,
+    "spotifyTrackId": "258NSVG3mRBx8g425pxRyr",
+    "description": "ディ・サルリの代表曲。流れるようなピアノと滑らかなリズムが特徴の黄金期タンゴの名作。",
+    "choices": [
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 },
+      { "title": "El Once", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1954 },
+      { "title": "9 de Julio", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1952 },
+      { "title": "La Yumba", "artist": "Osvaldo Pugliese", "year": 1946 }
+    ]
+  },
+  {
+    "id": "10",
+    "title": "9 de Julio",
+    "artist": "Juan D'Arienzo y su Orquesta Típica",
+    "year": 1952,
+    "spotifyTrackId": "2zYcCEJuthd8f6nyQ6M4Wb",
+    "description": "ダリエンソ楽団の代表曲。アルゼンチン独立記念日（7月9日）にちなんだ力強いリズムが特徴。",
+    "choices": [
+      { "title": "9 de Julio", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1952 },
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 },
+      { "title": "La Yumba", "artist": "Osvaldo Pugliese", "year": 1946 }
+    ]
+  },
+  {
+    "id": "11",
+    "title": "La Yumba",
+    "artist": "Osvaldo Pugliese",
+    "year": 1946,
+    "spotifyTrackId": "6pkLn3wwfm16Dkop8lbANC",
+    "description": "プグリエーセの代表作。重くダイナミックなリズムが特徴で、ダンサーに愛される黄金期の傑作。",
+    "choices": [
+      { "title": "La Yumba", "artist": "Osvaldo Pugliese", "year": 1946 },
+      { "title": "Recuerdo", "artist": "Osvaldo Pugliese", "year": 1944 },
+      { "title": "Gallo Ciego", "artist": "Osvaldo Pugliese", "year": 1951 },
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 }
+    ]
+  },
+  {
+    "id": "12",
+    "title": "Recuerdo",
+    "artist": "Osvaldo Pugliese",
+    "year": 1944,
+    "spotifyTrackId": "6hbNgx2bNtD167SqCeZHkb",
+    "description": "プグリエーセが1944年に録音した名曲。哀愁漂うメロディと力強いリズムが融合した黄金期の代表作。",
+    "choices": [
+      { "title": "Recuerdo", "artist": "Osvaldo Pugliese", "year": 1944 },
+      { "title": "La Yumba", "artist": "Osvaldo Pugliese", "year": 1946 },
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 },
+      { "title": "9 de Julio", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1952 }
+    ]
+  },
+  {
+    "id": "13",
+    "title": "Gallo Ciego",
+    "artist": "Osvaldo Pugliese",
+    "year": 1951,
+    "spotifyTrackId": "0D9lGBjmCfM4wemTNIBQEp",
+    "description": "プグリエーセの力強いスタイルを象徴する一曲。ダイナミックな強弱の変化がドラマティックな名演。",
+    "choices": [
+      { "title": "Gallo Ciego", "artist": "Osvaldo Pugliese", "year": 1951 },
+      { "title": "La Yumba", "artist": "Osvaldo Pugliese", "year": 1946 },
+      { "title": "Recuerdo", "artist": "Osvaldo Pugliese", "year": 1944 },
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 }
+    ]
+  },
+  {
+    "id": "14",
+    "title": "A la Gran Muñeca",
+    "artist": "Carlos Di Sarli y su Orquesta Típica",
+    "year": 1958,
+    "spotifyTrackId": "4C9giOkR248Ese7RUPjuNw",
+    "description": "ディ・サルリ楽団の優雅なスタイルを体現する一曲。流れるようなメロディが踊りやすいと評判。",
+    "choices": [
+      { "title": "A la Gran Muñeca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1958 },
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 },
+      { "title": "El Once", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1954 },
+      { "title": "9 de Julio", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1952 }
+    ]
+  },
+  {
+    "id": "15",
+    "title": "El Once",
+    "artist": "Carlos Di Sarli y su Orquesta Típica",
+    "year": 1954,
+    "spotifyTrackId": "5qHbiI1LDBgXbUUTJIOs65",
+    "description": "ディ・サルリ楽団の代表曲のひとつ。エレガントで安定したリズムが特徴の黄金期タンゴ。",
+    "choices": [
+      { "title": "El Once", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1954 },
+      { "title": "A la Gran Muñeca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1958 },
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 },
+      { "title": "La Yumba", "artist": "Osvaldo Pugliese", "year": 1946 }
+    ]
+  },
+  {
+    "id": "16",
+    "title": "Jealousy",
+    "artist": "Jacob Gade",
+    "year": 1925,
+    "spotifyTrackId": "1hsTndtIPUqcRjkR42QpAH",
+    "description": "デンマーク人作曲家ガーデが1925年に作曲したタンゴ。世界中で愛される情熱的な名曲。",
+    "choices": [
+      { "title": "Jealousy", "artist": "Jacob Gade", "year": 1925 },
+      { "title": "Por una Cabeza", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 },
+      { "title": "El Choclo", "artist": "Angel Villoldo", "year": 1903 }
+    ]
+  },
+  {
+    "id": "17",
+    "title": "Adiós Nonino",
+    "artist": "Astor Piazzolla",
+    "year": 1959,
+    "spotifyTrackId": "5vpv1rlqDVfhC5A65XraAN",
+    "description": "ピアソラが父の死を悼んで1959年に作曲した傑作。深い哀愁とヌエボタンゴの革新性が融合した名曲。",
+    "choices": [
+      { "title": "Adiós Nonino", "artist": "Astor Piazzolla", "year": 1959 },
+      { "title": "Libertango", "artist": "Astor Piazzolla", "year": 1974 },
+      { "title": "Verano Porteño", "artist": "Astor Piazzolla", "year": 1965 },
+      { "title": "Oblivion", "artist": "Astor Piazzolla", "year": 1982 }
+    ]
+  },
+  {
+    "id": "18",
+    "title": "Oblivion",
+    "artist": "Astor Piazzolla",
+    "year": 1982,
+    "spotifyTrackId": "0CShxQaSFFKXY2PxrJIhrB",
+    "description": "ピアソラが1982年に映画音楽として作曲した名曲。ゆっくりとした哀愁あふれるメロディが印象的。",
+    "choices": [
+      { "title": "Oblivion", "artist": "Astor Piazzolla", "year": 1982 },
+      { "title": "Adiós Nonino", "artist": "Astor Piazzolla", "year": 1959 },
+      { "title": "Libertango", "artist": "Astor Piazzolla", "year": 1974 },
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 }
+    ]
+  },
+  {
+    "id": "19",
+    "title": "Verano Porteño",
+    "artist": "Astor Piazzolla",
+    "year": 1965,
+    "spotifyTrackId": "0FKWV0n7HH0rrbgwV7UhbU",
+    "description": "ピアソラの「ブエノスアイレスの四季」より夏の楽章。情熱的でエネルギッシュなヌエボタンゴの傑作。",
+    "choices": [
+      { "title": "Verano Porteño", "artist": "Astor Piazzolla", "year": 1965 },
+      { "title": "Invierno Porteño", "artist": "Astor Piazzolla", "year": 1965 },
+      { "title": "Libertango", "artist": "Astor Piazzolla", "year": 1974 },
+      { "title": "Adiós Nonino", "artist": "Astor Piazzolla", "year": 1959 }
+    ]
+  },
+  {
+    "id": "20",
+    "title": "Invierno Porteño",
+    "artist": "Astor Piazzolla",
+    "year": 1965,
+    "spotifyTrackId": "0Q0iMh6Ng08OHsBI5hrDVo",
+    "description": "「ブエノスアイレスの四季」より冬の楽章。寂しくも力強いメロディがブエノスアイレスの冬を描く。",
+    "choices": [
+      { "title": "Invierno Porteño", "artist": "Astor Piazzolla", "year": 1965 },
+      { "title": "Verano Porteño", "artist": "Astor Piazzolla", "year": 1965 },
+      { "title": "Libertango", "artist": "Astor Piazzolla", "year": 1974 },
       { "title": "Oblivion", "artist": "Astor Piazzolla", "year": 1982 }
     ]
   }
