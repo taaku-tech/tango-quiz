@@ -35,17 +35,16 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
     onAnswer(choice);
   };
 
-  const showGuide = !playing && !answered;
-
   return (
-    <div className="pt-4 space-y-4">
+    <div className="pt-4 space-y-3">
       {/* Player container */}
       <div
-        className="rounded-xl overflow-hidden border-2"
         style={{
           position: "relative",
           height: "80px",
-          borderColor: "#3D0000",
+          border: "3px solid #C9A84C",
+          borderRadius: "8px",
+          overflow: "hidden",
           backgroundColor: "#1a0a0a",
         }}
       >
@@ -68,59 +67,40 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
           }}
         />
 
-        {/* Guide overlay — pointer-events: none so clicks reach iframe */}
-        {showGuide && (
-          <>
-            <style>{`
-              @keyframes bounce-x {
-                0%, 100% { transform: translateX(0); }
-                50% { transform: translateX(7px); }
-              }
-              .bounce-x { animation: bounce-x 0.9s ease-in-out infinite; }
-            `}</style>
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                pointerEvents: "none",
-                zIndex: 10,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div
-                style={{
-                  backgroundColor: "rgba(0,0,0,0.72)",
-                  border: "1px solid rgba(201,168,76,0.4)",
-                  borderRadius: "10px",
-                  padding: "5px 12px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                }}
-              >
-                <span
-                  style={{
-                    color: "#C9A84C",
-                    fontSize: "12px",
-                    fontWeight: "600",
-                    whiteSpace: "nowrap",
-                  }}
-                >
-                  👉 右端をタップして再生
-                </span>
-                <span
-                  className="bounce-x"
-                  style={{ color: "#C9A84C", fontSize: "14px", display: "inline-block" }}
-                >
-                  →
-                </span>
-              </div>
-            </div>
-          </>
+        {/* Gold pulsing highlight — bottom-right corner */}
+        {!answered && (
+          <div
+            className="animate-pulse"
+            style={{
+              position: "absolute",
+              bottom: 0,
+              right: 0,
+              width: "60px",
+              height: "60px",
+              border: "3px solid #C9A84C",
+              backgroundColor: "rgba(201,168,76,0.2)",
+              pointerEvents: "none",
+              zIndex: 20,
+            }}
+          />
         )}
       </div>
+
+      {/* Guide text below player */}
+      {!answered && (
+        <p
+          style={{
+            color: "#C9A84C",
+            fontSize: "14px",
+            textAlign: "center",
+            lineHeight: "1.7",
+          }}
+        >
+          Spotifyの音楽再生画面です。
+          <br />
+          右下の金色に光っている部分をタップすると再生が始まります🎵
+        </p>
+      )}
 
       {/* Choices */}
       <div className="space-y-3">
