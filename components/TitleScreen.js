@@ -155,12 +155,16 @@ export default function TitleScreen({ onStart }) {
               </span>
             </div>
             <PlayerMockup />
-            <p className="text-sm leading-relaxed" style={{ color: "#F5F0E8", opacity: 0.85 }}>
-              Spotifyプレイヤーの右端にある丸い再生ボタンをタップして音楽を再生してください
-            </p>
-            <p className="text-xs leading-relaxed" style={{ color: "#FFA500", fontSize: "13px" }}>
-              ⚠️ 30秒経過すると再生が自動停止し、プレイヤーの画面が変わります。
-              その場合はそのまま選択肢から曲名を選んで次の問題に進んでください。
+            <p className="text-sm leading-relaxed" style={{ color: "#F5F0E8", opacity: 0.85, lineHeight: "1.8" }}>
+              クイズ画面では、Spotifyの音楽再生画面が金色の枠で囲まれて表示されます。曲名がわからないようにぼかし処理がされています。
+              <br /><br />
+              <span style={{ color: "#C9A84C", fontWeight: "bold" }}>▶ 再生方法</span>
+              <br />
+              金色の枠内の右端あたりを何度かタップすると再生ボタンに当たり、音楽が流れ始めます。
+              <br /><br />
+              <span style={{ color: "#FFA500" }}>
+                ⚠️ 30秒経過すると再生が自動停止します。停止後はプレイヤーの画面が変わり、再生ボタンが押せなくなります。その場合は音楽なしで選択肢から曲名を選び、「次へ」ボタンで次の問題に進んでください。
+              </span>
             </p>
           </div>
 
