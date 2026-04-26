@@ -70,47 +70,55 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
 
         {/* Guide overlay — pointer-events: none so clicks reach iframe */}
         {showGuide && (
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              pointerEvents: "none",
-              zIndex: 10,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              paddingRight: "56px",
-            }}
-          >
+          <>
+            <style>{`
+              @keyframes bounce-x {
+                0%, 100% { transform: translateX(0); }
+                50% { transform: translateX(7px); }
+              }
+              .bounce-x { animation: bounce-x 0.9s ease-in-out infinite; }
+            `}</style>
             <div
               style={{
-                backgroundColor: "rgba(0,0,0,0.72)",
-                border: "1px solid rgba(201,168,76,0.4)",
-                borderRadius: "8px",
-                padding: "4px 10px",
+                position: "absolute",
+                inset: 0,
+                pointerEvents: "none",
+                zIndex: 10,
                 display: "flex",
                 alignItems: "center",
-                gap: "6px",
+                justifyContent: "center",
               }}
             >
-              <span
+              <div
                 style={{
-                  color: "#C9A84C",
-                  fontSize: "11px",
-                  fontWeight: "600",
-                  whiteSpace: "nowrap",
+                  backgroundColor: "rgba(0,0,0,0.72)",
+                  border: "1px solid rgba(201,168,76,0.4)",
+                  borderRadius: "10px",
+                  padding: "5px 12px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "6px",
                 }}
               >
-                ▶ ここを押して再生
-              </span>
-              <span
-                className="animate-bounce"
-                style={{ color: "#C9A84C", fontSize: "12px" }}
-              >
-                ↓
-              </span>
+                <span
+                  style={{
+                    color: "#C9A84C",
+                    fontSize: "12px",
+                    fontWeight: "600",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  👉 右端をタップして再生
+                </span>
+                <span
+                  className="bounce-x"
+                  style={{ color: "#C9A84C", fontSize: "14px", display: "inline-block" }}
+                >
+                  →
+                </span>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </div>
 
