@@ -169,6 +169,28 @@ export default function Home() {
         </div>
       )}
 
+      {/* Playback notice */}
+      <div
+        className="max-w-lg mx-auto px-4 pb-6"
+        style={{ borderTop: "1px solid #2a2a2a", marginTop: "16px" }}
+      >
+        <p
+          style={{
+            color: "#888888",
+            fontSize: "12px",
+            textAlign: "center",
+            lineHeight: "1.8",
+            paddingTop: "12px",
+          }}
+        >
+          ※ 再生時間について
+          <br />
+          Spotifyにログインしていない場合は30秒で自動停止します。
+          <br />
+          ログイン済みの場合はフル再生されます。
+        </p>
+      </div>
+
       {showModal && modalSong && (
         <SongModal song={modalSong} onClose={closeModal} />
       )}
