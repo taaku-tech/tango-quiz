@@ -113,30 +113,32 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
 
       {/* Guide text below player */}
       {!answered && (
-        <p
-          style={{
-            color: "#C9A84C",
-            fontSize: "14px",
-            textAlign: "center",
-            lineHeight: "1.7",
-          }}
-        >
-          金色の枠内の右下あたりに再生ボタンがあります。
-          <br />
-          タップして音楽を再生してください🎵
-        </p>
-        <p
-          style={{
-            color: "#FFA500",
-            fontSize: "12px",
-            textAlign: "center",
-            lineHeight: "1.7",
-          }}
-        >
-          ⚠️ 30秒経過後は再生ボタンが押せなくなります。
-          <br />
-          その場合はそのまま選択肢から曲名を選んでください。
-        </p>
+        <>
+          <p
+            style={{
+              color: "#C9A84C",
+              fontSize: "14px",
+              textAlign: "center",
+              lineHeight: "1.7",
+            }}
+          >
+            金色の枠内の右下あたりに再生ボタンがあります。
+            <br />
+            タップして音楽を再生してください🎵
+          </p>
+          <p
+            style={{
+              color: "#FFA500",
+              fontSize: "12px",
+              textAlign: "center",
+              lineHeight: "1.7",
+            }}
+          >
+            ⚠️ 30秒経過後は再生ボタンが押せなくなります。
+            <br />
+            その場合はそのまま選択肢から曲名を選んでください。
+          </p>
+        </>
       )}
 
       {/* Choices */}
