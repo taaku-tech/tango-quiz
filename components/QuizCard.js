@@ -37,6 +37,19 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
 
   return (
     <div className="pt-4 space-y-3">
+      {/* Quiz prompt */}
+      <p
+        style={{
+          color: "#C9A84C",
+          fontSize: "16px",
+          fontWeight: "bold",
+          textAlign: "center",
+          marginBottom: "8px",
+        }}
+      >
+        次の音楽を聴いて、以下の選択肢から曲名を選んでください。
+      </p>
+
       {/* Gold border wrapper — separated from overflow container */}
       <div
         style={{
@@ -108,11 +121,9 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
             lineHeight: "1.7",
           }}
         >
-          Spotifyの音楽再生画面です（ぼかし表示中）。
+          金色の枠内の右下あたりに再生ボタンがあります。
           <br />
-          画面の右端あたりをタップすると再生できます🎵
-          <br />
-          再生できない場合は少し場所をずらしてお試しください。
+          タップして音楽を再生してください🎵
         </p>
       )}
 
