@@ -125,6 +125,18 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
           <br />
           タップして音楽を再生してください🎵
         </p>
+        <p
+          style={{
+            color: "#FFA500",
+            fontSize: "12px",
+            textAlign: "center",
+            lineHeight: "1.7",
+          }}
+        >
+          ⚠️ 30秒経過後は再生ボタンが押せなくなります。
+          <br />
+          その場合はそのまま選択肢から曲名を選んでください。
+        </p>
       )}
 
       {/* Choices */}

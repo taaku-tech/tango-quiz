@@ -158,6 +158,10 @@ export default function TitleScreen({ onStart }) {
             <p className="text-sm leading-relaxed" style={{ color: "#F5F0E8", opacity: 0.85 }}>
               Spotifyプレイヤーの右端にある丸い再生ボタンをタップして音楽を再生してください
             </p>
+            <p className="text-xs leading-relaxed" style={{ color: "#FFA500", fontSize: "13px" }}>
+              ⚠️ 30秒経過すると再生が自動停止し、プレイヤーの画面が変わります。
+              その場合はそのまま選択肢から曲名を選んで次の問題に進んでください。
+            </p>
           </div>
 
           <div className="h-px" style={{ backgroundColor: "#3D0000" }} />
