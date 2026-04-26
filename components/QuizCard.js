@@ -67,16 +67,16 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
           }}
         />
 
-        {/* Gold pulsing highlight — bottom-right corner */}
+        {/* Gold pulsing highlight — full-height right edge */}
         {!answered && (
           <div
             className="animate-pulse"
             style={{
               position: "absolute",
-              bottom: 0,
+              top: 0,
               right: 0,
               width: "60px",
-              height: "60px",
+              height: "100%",
               border: "3px solid #C9A84C",
               backgroundColor: "rgba(201,168,76,0.2)",
               pointerEvents: "none",
@@ -96,9 +96,11 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
             lineHeight: "1.7",
           }}
         >
-          Spotifyの音楽再生画面です。
+          Spotifyの音楽再生画面です（ぼかし表示中）。
           <br />
-          右下の金色に光っている部分をタップすると再生が始まります🎵
+          画面の右端あたりをタップすると再生できます🎵
+          <br />
+          再生できない場合は少し場所をずらしてお試しください。
         </p>
       )}
 
