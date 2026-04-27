@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 const artists = [
   {
     id: 1,
     name: "Juan D'Arienzo y su Orquesta Típica",
+    years: "1900–1976",
+    songs: ["La Cumparsita", "9 de Julio", "El Flete", "Don Juan"],
     feature:
       "「タンゴの王様」と呼ばれるダリエンソ楽団は、鋭く刻むリズムと速いテンポが最大の特徴。1935年頃からビアジをピアニストに迎えてスタイルを確立した。バンドネオンの歯切れのよい音が際立ち、常に踊るための音楽を追求した。",
     dancePoint:
@@ -10,6 +14,8 @@ const artists = [
   {
     id: 2,
     name: "Carlos Gardel",
+    years: "1890–1935",
+    songs: ["Por una Cabeza", "Volver", "Mi Buenos Aires Querido", "Melodía de Arrabal"],
     feature:
       "「タンゴの神様」と称えられる伝説の歌手。甘く切ない声質と完璧なフレージングで、タンゴを世界に広めた。1935年の飛行機事故で45歳で亡くなったが、その録音は今も色あせない。",
     dancePoint:
@@ -18,6 +24,8 @@ const artists = [
   {
     id: 3,
     name: "Astor Piazzolla",
+    years: "1921–1992",
+    songs: ["Libertango", "Adiós Nonino", "Oblivion", "Verano Porteño"],
     feature:
       "ヌエボタンゴの創始者。クラシック音楽とジャズを融合させ、タンゴを演奏会芸術へと昇華させた革命家。伝統タンゴの愛好家からは批判されたが、今や世界で最も知られるタンゴ作曲家。",
     dancePoint:
@@ -26,6 +34,8 @@ const artists = [
   {
     id: 4,
     name: "Osvaldo Pugliese",
+    years: "1905–1995",
+    songs: ["La Yumba", "Recuerdo", "Gallo Ciego", "Negracha"],
     feature:
       "重厚でドラマティックな「プグリエーセのコンパス」で知られる巨匠。左手のピアノによる強いアクセント「ラ・ユンバ」が特徴的で、楽団全体が一体となった迫力ある演奏スタイル。",
     dancePoint:
@@ -34,6 +44,8 @@ const artists = [
   {
     id: 5,
     name: "Carlos Di Sarli y su Orquesta Típica",
+    years: "1903–1960",
+    songs: ["Bahía Blanca", "El Once", "Organito de la Tarde", "Comme il Faut"],
     feature:
       "「セニョール・デル・タンゴ」の異名を持つ優雅な楽団長。流れるようなピアノラインとシルクのように滑らかなリズムが特徴。派手さよりも品格を重視したスタイルは多くのダンサーに愛される。",
     dancePoint:
@@ -42,6 +54,8 @@ const artists = [
   {
     id: 6,
     name: "Angel Villoldo",
+    years: "1861–1919",
+    songs: ["El Choclo"],
     feature:
       "タンゴ草創期を代表する作曲家・歌手。19世紀末のブエノスアイレスの街角で生まれたタンゴの原型を多く作曲。ユーモアと活力に満ちた初期タンゴのエッセンスを伝える存在。",
     dancePoint:
@@ -50,6 +64,8 @@ const artists = [
   {
     id: 7,
     name: "Enrique Saborido",
+    years: "1877–1941",
+    songs: ["La Morocha"],
     feature:
       "ウルグアイ出身のタンゴ草創期の作曲家。明るくエネルギッシュな初期タンゴを多く作曲し、ヨーロッパへのタンゴ普及にも貢献した。",
     dancePoint:
@@ -58,6 +74,8 @@ const artists = [
   {
     id: 8,
     name: "Juan de Dios Filiberto",
+    years: "1885–1964",
+    songs: ["Caminito"],
     feature:
       "ブエノスアイレスの詩情を音楽で表現した叙情的な作曲家。カミニートをはじめ、下町の情景を美しいメロディで描いた作品が多い。",
     dancePoint:
@@ -66,6 +84,8 @@ const artists = [
   {
     id: 9,
     name: "Jacob Gade",
+    years: "1879–1963",
+    songs: ["Jealousy"],
     feature:
       "デンマーク出身の作曲家。1925年に作曲したJealousyはタンゴの情熱を世界に広めた名曲で、映画やショーで多用され今も世界中で演奏される。",
     dancePoint:
@@ -74,6 +94,8 @@ const artists = [
   {
     id: 10,
     name: "Aníbal Troilo y su Orquesta Típica",
+    years: "1914–1975",
+    songs: ["Malena", "Sur", "Barrio de Tango", "La Última Curda", "Quejas de Bandoneón"],
     feature:
       "「ピチュコ」の愛称で親しまれた黄金期最大のバンドネオン奏者・楽団長。叙情的で温かみのある演奏スタイルはダリエンソの鋭さとは対照的で、ロマンティックなタンゴの象徴。フィオレンティーノとのコンビは黄金期最高の声楽デュオ。",
     dancePoint:
@@ -82,6 +104,8 @@ const artists = [
   {
     id: 11,
     name: "Francisco Canaro y su Orquesta Típica",
+    years: "1888–1964",
+    songs: ["Poema", "Milonga Sentimental", "Se Dice de Mí", "Adios Pampa Mía"],
     feature:
       "史上最多録音数（3800曲以上）を誇るタンゴ界の巨人。明快で踊りやすいスタイルは世界中のダンサーに愛され、タンゴをヨーロッパに広めた功績も大きい。バランスのとれた安定したオーケストラサウンドが特徴。",
     dancePoint:
@@ -90,6 +114,8 @@ const artists = [
   {
     id: 12,
     name: "Enrique Rodriguez y su Orquesta Típica",
+    years: "1901–1971",
+    songs: ["Amor en Budapest", "Isabelita", "Los Gitanos", "Japonesita"],
     feature:
       "明るく快活でユーモアあふれる楽団スタイル。他の楽団が哀愁や情熱を前面に出す中、ロドリゲスは陽気さと軽やかさを大切にした独特の個性を持つ。",
     dancePoint:
@@ -98,6 +124,8 @@ const artists = [
   {
     id: 13,
     name: "Angel D'Agostino y Angel Vargas",
+    years: "1900–1991 / 1904–1959",
+    songs: ["Tres Esquinas", "Ninguna", "Palais de Glace", "Una Pena"],
     feature:
       "「二人の天使（ロス・ドス・アンヘレス）」と呼ばれた黄金のコンビ。ダゴスティーノのシンプルで表情豊かなピアノとバルガスの甘い歌声が融合した、素朴で魔法のような音楽。ブエノスアイレスのミロンガで最も人気が高い楽団のひとつ。",
     dancePoint:
@@ -106,6 +134,8 @@ const artists = [
   {
     id: 14,
     name: "Julio De Caro y su Sexteto",
+    years: "1899–1980",
+    songs: ["Boedo", "Mala Junta", "Tierra Querida", "Flores Negras"],
     feature:
       "タンゴに知性と芸術性をもたらした革新者。クラシック音楽の対位法を取り入れた複雑なアレンジは黄金期タンゴの土台となった。プグリエーセやトロイロも影響を受けた巨匠。",
     dancePoint:
@@ -114,6 +144,8 @@ const artists = [
   {
     id: 15,
     name: "Osvaldo Fresedo y su Orquesta Típica",
+    years: "1897–1984",
+    songs: ["Vida Mía", "Sollozos", "Buscándote", "Tanguango"],
     feature:
       "「タンゴの詩人」と呼ばれる洗練された楽団長。優雅でロマンティックなスタイルはディ・サルリと並ぶ上品さを持つ。ヴァイオリンとハープを多用した独特のサウンドが特徴。",
     dancePoint:
@@ -124,19 +156,29 @@ const artists = [
 export default function ArtistsPage() {
   return (
     <div
-      className="min-h-screen px-4 py-10"
+      className="min-h-screen px-4 py-8"
       style={{ backgroundColor: "#0a0a0a", color: "#F5F0E8" }}
     >
       <div className="max-w-lg mx-auto space-y-6">
-        <div className="text-center space-y-2 mb-8">
+        {/* Back button */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-sm font-semibold transition-opacity hover:opacity-80"
+          style={{ color: "#C9A84C" }}
+        >
+          ← タイトルに戻る
+        </Link>
+
+        {/* Header */}
+        <div className="text-center space-y-2 pt-2 pb-4">
           <h1
             className="text-3xl"
             style={{ fontFamily: "var(--font-playfair)", color: "#C9A84C" }}
           >
-            演奏家ガイド
+            演奏家紹介
           </h1>
           <p className="text-sm" style={{ color: "#F5F0E8", opacity: 0.6 }}>
-            各演奏家の特徴とダンスのポイント
+            アルゼンチンタンゴを代表する15名の演奏家
           </p>
           <div className="w-16 h-px mx-auto mt-3" style={{ backgroundColor: "#8B0000" }} />
         </div>
@@ -147,12 +189,33 @@ export default function ArtistsPage() {
             className="rounded-2xl p-5 space-y-4 border"
             style={{ backgroundColor: "#1a0a0a", borderColor: "#C9A84C" }}
           >
-            <h2
-              className="text-base font-bold leading-snug"
-              style={{ fontFamily: "var(--font-playfair)", color: "#C9A84C" }}
-            >
-              {artist.name}
-            </h2>
+            {/* Name row with number badge */}
+            <div className="flex items-start gap-3">
+              <div
+                className="flex-shrink-0 flex items-center justify-center rounded-full text-xs font-bold"
+                style={{
+                  width: 28,
+                  height: 28,
+                  backgroundColor: "#8B0000",
+                  border: "2px solid #C9A84C",
+                  color: "#C9A84C",
+                  marginTop: 2,
+                }}
+              >
+                {artist.id}
+              </div>
+              <div className="space-y-0.5">
+                <h2
+                  className="text-base font-bold leading-snug"
+                  style={{ fontFamily: "var(--font-playfair)", color: "#C9A84C" }}
+                >
+                  {artist.name}
+                </h2>
+                <p className="text-xs" style={{ color: "#888888" }}>
+                  {artist.years}
+                </p>
+              </div>
+            </div>
 
             <div className="space-y-1">
               <p
@@ -178,6 +241,31 @@ export default function ArtistsPage() {
               <p className="text-sm leading-relaxed" style={{ color: "#F5F0E8", opacity: 0.85 }}>
                 {artist.dancePoint}
               </p>
+            </div>
+
+            {/* Representative songs */}
+            <div className="space-y-2">
+              <p
+                className="text-xs font-bold tracking-wider uppercase"
+                style={{ color: "#8B0000" }}
+              >
+                代表曲
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {artist.songs.map((song) => (
+                  <span
+                    key={song}
+                    className="text-xs px-2 py-1 rounded-full"
+                    style={{
+                      backgroundColor: "#2a1400",
+                      border: "1px solid #C9A84C",
+                      color: "#C9A84C",
+                    }}
+                  >
+                    {song}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         ))}
