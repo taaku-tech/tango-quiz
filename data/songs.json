@@ -278,5 +278,537 @@
       { "title": "Libertango", "artist": "Astor Piazzolla", "year": 1974 },
       { "title": "Oblivion", "artist": "Astor Piazzolla", "year": 1982 }
     ]
+  },
+  {
+    "id": "21",
+    "title": "El Flete",
+    "artist": "Juan D'Arienzo y su Orquesta Típica",
+    "year": 1938,
+    "spotifyTrackId": "4NUomtCzWb8WNW1DOjCa8A",
+    "description": "ダリエンソの力強いリズムを体現する一曲。1938年録音で黄金期初期の躍動感あふれる名演。",
+    "choices": [
+      { "title": "El Flete", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1938 },
+      { "title": "Don Juan", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1947 },
+      { "title": "9 de Julio", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1952 },
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 }
+    ]
+  },
+  {
+    "id": "22",
+    "title": "Don Juan",
+    "artist": "Juan D'Arienzo y su Orquesta Típica",
+    "year": 1947,
+    "spotifyTrackId": "6DtVgrdkpdm2pgnrRCYV49",
+    "description": "ダリエンソ楽団の黄金期を代表する一曲。切れのあるリズムと華やかなアレンジが特徴。",
+    "choices": [
+      { "title": "Don Juan", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1947 },
+      { "title": "El Flete", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1938 },
+      { "title": "9 de Julio", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1952 },
+      { "title": "La Cumparsita", "artist": "Juan D'Arienzo y su Orquesta Típica", "year": 1943 }
+    ]
+  },
+  {
+    "id": "23",
+    "title": "Mi Buenos Aires Querido",
+    "artist": "Carlos Gardel",
+    "year": 1934,
+    "spotifyTrackId": "3bTUGOGzW0HkTVGlvJDfMr",
+    "description": "ガルデルがブエノスアイレスへの愛を歌った名曲。1934年映画のために作られ、今もアルゼンチンの象徴的な曲。",
+    "choices": [
+      { "title": "Mi Buenos Aires Querido", "artist": "Carlos Gardel", "year": 1934 },
+      { "title": "Por una Cabeza", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "Volver", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "Melodía de Arrabal", "artist": "Carlos Gardel", "year": 1933 }
+    ]
+  },
+  {
+    "id": "24",
+    "title": "Melodía de Arrabal",
+    "artist": "Carlos Gardel",
+    "year": 1933,
+    "spotifyTrackId": "3nh8BJgBD77KpP6QTcv0Pn",
+    "description": "ガルデルが1933年に発表した叙情的な名曲。ブエノスアイレスの下町の哀愁を美しく歌い上げている。",
+    "choices": [
+      { "title": "Melodía de Arrabal", "artist": "Carlos Gardel", "year": 1933 },
+      { "title": "Mi Buenos Aires Querido", "artist": "Carlos Gardel", "year": 1934 },
+      { "title": "El Día que me Quieras", "artist": "Carlos Gardel", "year": 1935 },
+      { "title": "Volver", "artist": "Carlos Gardel", "year": 1935 }
+    ]
+  },
+  {
+    "id": "25",
+    "title": "Negracha",
+    "artist": "Osvaldo Pugliese",
+    "year": 1949,
+    "spotifyTrackId": "6RwstZogJ0lTp9BphaF5qH",
+    "description": "プグリエーセの力強いスタイルを体現する器楽曲。重厚なリズムと劇的な展開が特徴。",
+    "choices": [
+      { "title": "Negracha", "artist": "Osvaldo Pugliese", "year": 1949 },
+      { "title": "La Yumba", "artist": "Osvaldo Pugliese", "year": 1946 },
+      { "title": "Recuerdo", "artist": "Osvaldo Pugliese", "year": 1944 },
+      { "title": "Gallo Ciego", "artist": "Osvaldo Pugliese", "year": 1951 }
+    ]
+  },
+  {
+    "id": "26",
+    "title": "El Remate",
+    "artist": "Osvaldo Pugliese",
+    "year": 1944,
+    "spotifyTrackId": "3R3lV9S5J1gK4yBGVg2hin",
+    "description": "プグリエーセ楽団の黄金期を代表する一曲。躍動感あふれるリズムとダイナミックな演奏が魅力。",
+    "choices": [
+      { "title": "El Remate", "artist": "Osvaldo Pugliese", "year": 1944 },
+      { "title": "La Yumba", "artist": "Osvaldo Pugliese", "year": 1946 },
+      { "title": "Negracha", "artist": "Osvaldo Pugliese", "year": 1949 },
+      { "title": "Recuerdo", "artist": "Osvaldo Pugliese", "year": 1944 }
+    ]
+  },
+  {
+    "id": "27",
+    "title": "Organito de la Tarde",
+    "artist": "Carlos Di Sarli y su Orquesta Típica",
+    "year": 1941,
+    "spotifyTrackId": "3mYGX8jYIhMnwMCH2G3DnL",
+    "description": "ディ・サルリの優雅なスタイルを象徴する名曲。流れるようなピアノと滑らかな弦が印象的。",
+    "choices": [
+      { "title": "Organito de la Tarde", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1941 },
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 },
+      { "title": "Comme il Faut", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1947 },
+      { "title": "El Once", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1954 }
+    ]
+  },
+  {
+    "id": "28",
+    "title": "Comme il Faut",
+    "artist": "Carlos Di Sarli y su Orquesta Típica",
+    "year": 1947,
+    "spotifyTrackId": "0NwEZrkrzIlK1fxN7CMAxr",
+    "description": "ディ・サルリの洗練されたスタイルが際立つ一曲。エレガントで踊りやすいと世界中のミロンガで人気。",
+    "choices": [
+      { "title": "Comme il Faut", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1947 },
+      { "title": "Organito de la Tarde", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1941 },
+      { "title": "Bahía Blanca", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1957 },
+      { "title": "El Once", "artist": "Carlos Di Sarli y su Orquesta Típica", "year": 1954 }
+    ]
+  },
+  {
+    "id": "29",
+    "title": "Malena",
+    "artist": "Aníbal Troilo y su Orquesta Típica",
+    "year": 1942,
+    "spotifyTrackId": "52zx9TK8JcK5o7zw8b4KIr",
+    "description": "トロイロとフィオレンティーノによる黄金期の傑作。「マレーナはタンゴを誰よりも歌う」という歌詞で始まる。",
+    "choices": [
+      { "title": "Malena", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1942 },
+      { "title": "Sur", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1948 },
+      { "title": "Barrio de Tango", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1942 },
+      { "title": "La Última Curda", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1956 }
+    ]
+  },
+  {
+    "id": "30",
+    "title": "Sur",
+    "artist": "Aníbal Troilo y su Orquesta Típica",
+    "year": 1948,
+    "spotifyTrackId": "5U6b46tbKTOfCfepfaGOxd",
+    "description": "ホメロ・マンシ作詞のタンゴの傑作。ブエノスアイレス南部の街への郷愁を歌った詩情あふれる名曲。",
+    "choices": [
+      { "title": "Sur", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1948 },
+      { "title": "Malena", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1942 },
+      { "title": "Barrio de Tango", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1942 },
+      { "title": "Quejas de Bandoneón", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1945 }
+    ]
+  },
+  {
+    "id": "31",
+    "title": "Barrio de Tango",
+    "artist": "Aníbal Troilo y su Orquesta Típica",
+    "year": 1942,
+    "spotifyTrackId": "5WTFT5WIgi2K8V8uf8MaGx",
+    "description": "ブエノスアイレスの下町タンゴを歌った名曲。トロイロとフィオレンティーノの名コンビによる黄金期の傑作。",
+    "choices": [
+      { "title": "Barrio de Tango", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1942 },
+      { "title": "Malena", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1942 },
+      { "title": "Sur", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1948 },
+      { "title": "La Última Curda", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1956 }
+    ]
+  },
+  {
+    "id": "32",
+    "title": "La Última Curda",
+    "artist": "Aníbal Troilo y su Orquesta Típica",
+    "year": 1956,
+    "spotifyTrackId": "0CVzlasAI7bLldk1TiFDUZ",
+    "description": "トロイロが作曲した深い哀愁の名曲。酔いどれ男の孤独を歌った歌詞とメロディが胸に刺さる。",
+    "choices": [
+      { "title": "La Última Curda", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1956 },
+      { "title": "Sur", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1948 },
+      { "title": "Malena", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1942 },
+      { "title": "Quejas de Bandoneón", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1945 }
+    ]
+  },
+  {
+    "id": "33",
+    "title": "Quejas de Bandoneón",
+    "artist": "Aníbal Troilo y su Orquesta Típica",
+    "year": 1945,
+    "spotifyTrackId": "5MiTYfPu9a4tHoVPbuTIfn",
+    "description": "バンドネオンの嘆きをテーマにした器楽曲。トロイロの卓越したバンドネオン演奏が際立つ名演。",
+    "choices": [
+      { "title": "Quejas de Bandoneón", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1945 },
+      { "title": "Malena", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1942 },
+      { "title": "Sur", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1948 },
+      { "title": "La Última Curda", "artist": "Aníbal Troilo y su Orquesta Típica", "year": 1956 }
+    ]
+  },
+  {
+    "id": "34",
+    "title": "Poema",
+    "artist": "Francisco Canaro y su Orquesta Típica",
+    "year": 1936,
+    "spotifyTrackId": "3cjogVxdqPA7RJd1tkrvpW",
+    "description": "カナロの代表曲。ロベルト・マイダの歌声と優雅なオーケストラが融合した黄金期の名作。",
+    "choices": [
+      { "title": "Poema", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1936 },
+      { "title": "Milonga Sentimental", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1933 },
+      { "title": "Se Dice de Mí", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1943 },
+      { "title": "Adios Pampa Mía", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1945 }
+    ]
+  },
+  {
+    "id": "35",
+    "title": "Milonga Sentimental",
+    "artist": "Francisco Canaro y su Orquesta Típica",
+    "year": 1933,
+    "spotifyTrackId": "4hjIiXGodl0vol22I1dXL3",
+    "description": "カナロが1933年に初めてミロンガを録音した歴史的名曲。タンゴ史上最初のミロンガ録音とされる。",
+    "choices": [
+      { "title": "Milonga Sentimental", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1933 },
+      { "title": "Poema", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1936 },
+      { "title": "Se Dice de Mí", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1943 },
+      { "title": "Adios Pampa Mía", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1945 }
+    ]
+  },
+  {
+    "id": "36",
+    "title": "Se Dice de Mí",
+    "artist": "Francisco Canaro y su Orquesta Típica",
+    "year": 1943,
+    "spotifyTrackId": "6BwKr8DcWxhZhKUm4NHN6F",
+    "description": "ティタ・メレーリョとカナロ楽団による名演。ユーモアと皮肉を交えた歌詞が人気の明るいタンゴ。",
+    "choices": [
+      { "title": "Se Dice de Mí", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1943 },
+      { "title": "Poema", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1936 },
+      { "title": "Milonga Sentimental", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1933 },
+      { "title": "Adios Pampa Mía", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1945 }
+    ]
+  },
+  {
+    "id": "37",
+    "title": "Adios Pampa Mía",
+    "artist": "Francisco Canaro y su Orquesta Típica",
+    "year": 1945,
+    "spotifyTrackId": "0GuJsBSSNV4NDZXoeazuPN",
+    "description": "アルゼンチン・パンパへの別れを歌った感動的な名曲。カナロ楽団の円熟した演奏が光る。",
+    "choices": [
+      { "title": "Adios Pampa Mía", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1945 },
+      { "title": "Poema", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1936 },
+      { "title": "Milonga Sentimental", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1933 },
+      { "title": "Se Dice de Mí", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1943 }
+    ]
+  },
+  {
+    "id": "38",
+    "title": "Nobleza de Arrabal",
+    "artist": "Francisco Canaro y su Orquesta Típica",
+    "year": 1929,
+    "spotifyTrackId": "0xABm4HF6DQWbl7RGYnjLJ",
+    "description": "カナロが1929年に作曲した古典的タンゴ。ブエノスアイレスの下町の誇りを歌った気品ある一曲。",
+    "choices": [
+      { "title": "Nobleza de Arrabal", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1929 },
+      { "title": "Poema", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1936 },
+      { "title": "Milonga Sentimental", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1933 },
+      { "title": "Adios Pampa Mía", "artist": "Francisco Canaro y su Orquesta Típica", "year": 1945 }
+    ]
+  },
+  {
+    "id": "39",
+    "title": "Amor en Budapest",
+    "artist": "Enrique Rodriguez y su Orquesta Típica",
+    "year": 1941,
+    "spotifyTrackId": "3cUaBldA0fCgLQeAADpwAu",
+    "description": "エンリケ・ロドリゲス楽団の明るく躍動感あふれる代表曲。アルマンド・モレーノの歌声が印象的。",
+    "choices": [
+      { "title": "Amor en Budapest", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1941 },
+      { "title": "Isabelita", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1942 },
+      { "title": "Los Gitanos", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1943 },
+      { "title": "Japonesita", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1942 }
+    ]
+  },
+  {
+    "id": "40",
+    "title": "Isabelita",
+    "artist": "Enrique Rodriguez y su Orquesta Típica",
+    "year": 1942,
+    "spotifyTrackId": "0g0kR1xHpVEEqwGX2HdaEc",
+    "description": "ロドリゲス楽団の軽快なリズムが特徴的な人気曲。踊りやすいコンパスで多くのミロンガで愛用される。",
+    "choices": [
+      { "title": "Isabelita", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1942 },
+      { "title": "Amor en Budapest", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1941 },
+      { "title": "Los Gitanos", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1943 },
+      { "title": "La Buenaventura", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1941 }
+    ]
+  },
+  {
+    "id": "41",
+    "title": "Los Gitanos",
+    "artist": "Enrique Rodriguez y su Orquesta Típica",
+    "year": 1943,
+    "spotifyTrackId": "23EU3ovZTA2sbNI3TwQN2a",
+    "description": "ジプシーをテーマにした情熱的な一曲。ロドリゲス楽団の華やかなアレンジが際立つ。",
+    "choices": [
+      { "title": "Los Gitanos", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1943 },
+      { "title": "Amor en Budapest", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1941 },
+      { "title": "Isabelita", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1942 },
+      { "title": "Japonesita", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1942 }
+    ]
+  },
+  {
+    "id": "42",
+    "title": "Japonesita",
+    "artist": "Enrique Rodriguez y su Orquesta Típica",
+    "year": 1942,
+    "spotifyTrackId": "1ZKQSvaux6VNcNghPl4vfK",
+    "description": "ロドリゲス楽団の個性的なレパートリーの一曲。明るくユニークなタイトルと踊りやすいリズムが人気。",
+    "choices": [
+      { "title": "Japonesita", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1942 },
+      { "title": "Isabelita", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1942 },
+      { "title": "Los Gitanos", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1943 },
+      { "title": "La Buenaventura", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1941 }
+    ]
+  },
+  {
+    "id": "43",
+    "title": "La Buenaventura",
+    "artist": "Enrique Rodriguez y su Orquesta Típica",
+    "year": 1941,
+    "spotifyTrackId": "3h7Zhca5v9xH6lEhNz701E",
+    "description": "ロドリゲス楽団の快活なスタイルを代表する一曲。明るいメロディと踊りやすいリズムが特徴。",
+    "choices": [
+      { "title": "La Buenaventura", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1941 },
+      { "title": "Amor en Budapest", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1941 },
+      { "title": "Isabelita", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1942 },
+      { "title": "Los Gitanos", "artist": "Enrique Rodriguez y su Orquesta Típica", "year": 1943 }
+    ]
+  },
+  {
+    "id": "44",
+    "title": "Tres Esquinas",
+    "artist": "Angel D'Agostino y Angel Vargas",
+    "year": 1941,
+    "spotifyTrackId": "2sfjaMOuk1fEiVQua7qo5V",
+    "description": "ダゴスティーノ＆バルガスの最も有名な曲のひとつ。ブエノスアイレスの街角への哀愁が詩的に歌われる。",
+    "choices": [
+      { "title": "Tres Esquinas", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 },
+      { "title": "Ninguna", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 },
+      { "title": "Una Pena", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 },
+      { "title": "Palais de Glace", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 }
+    ]
+  },
+  {
+    "id": "45",
+    "title": "Ninguna",
+    "artist": "Angel D'Agostino y Angel Vargas",
+    "year": 1942,
+    "spotifyTrackId": "0AKtzWtqNyqGzF0X42XRTK",
+    "description": "バルガスの甘い歌声が際立つ名曲。「誰も彼女には及ばない」という歌詞が印象的な黄金期の傑作。",
+    "choices": [
+      { "title": "Ninguna", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 },
+      { "title": "Tres Esquinas", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 },
+      { "title": "Una Pena", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 },
+      { "title": "Palais de Glace", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 }
+    ]
+  },
+  {
+    "id": "46",
+    "title": "Una Pena",
+    "artist": "Angel D'Agostino y Angel Vargas",
+    "year": 1941,
+    "spotifyTrackId": "20Gdh6SFmEAdR8a1Euc1mC",
+    "description": "ダゴスティーノとバルガスの絶妙なコンビネーションが光る一曲。シンプルで表情豊かな演奏が特徴。",
+    "choices": [
+      { "title": "Una Pena", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 },
+      { "title": "Tres Esquinas", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 },
+      { "title": "Ninguna", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 },
+      { "title": "Palais de Glace", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 }
+    ]
+  },
+  {
+    "id": "47",
+    "title": "Mano Blanca",
+    "artist": "Angel D'Agostino y Angel Vargas",
+    "year": 1942,
+    "spotifyTrackId": "0AKtzWtqNyqGzF0X42XRTK",
+    "description": "ダゴスティーノ楽団のシンプルで味わい深いスタイルが楽しめる一曲。バルガスの歌声が魅力的。",
+    "choices": [
+      { "title": "Mano Blanca", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 },
+      { "title": "Tres Esquinas", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 },
+      { "title": "Ninguna", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 },
+      { "title": "Una Pena", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 }
+    ]
+  },
+  {
+    "id": "48",
+    "title": "Palais de Glace",
+    "artist": "Angel D'Agostino y Angel Vargas",
+    "year": 1942,
+    "spotifyTrackId": "1jRG1W6SzjKqhByeg1I1mi",
+    "description": "ブエノスアイレスの有名なダンスホール「パレ・デ・グラス」をテーマにした粋な一曲。",
+    "choices": [
+      { "title": "Palais de Glace", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 },
+      { "title": "Tres Esquinas", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 },
+      { "title": "Ninguna", "artist": "Angel D'Agostino y Angel Vargas", "year": 1942 },
+      { "title": "Una Pena", "artist": "Angel D'Agostino y Angel Vargas", "year": 1941 }
+    ]
+  },
+  {
+    "id": "49",
+    "title": "Boedo",
+    "artist": "Julio De Caro y su Sexteto",
+    "year": 1928,
+    "spotifyTrackId": "2kkriXnbPqvQTNcmfFXEml",
+    "description": "デ・カロがブエノスアイレスの街区ボエドに捧げた器楽曲。知性的なアレンジが黄金期前のタンゴを代表する。",
+    "choices": [
+      { "title": "Boedo", "artist": "Julio De Caro y su Sexteto", "year": 1928 },
+      { "title": "Mala Junta", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Tierra Querida", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Flores Negras", "artist": "Julio De Caro y su Sexteto", "year": 1927 }
+    ]
+  },
+  {
+    "id": "50",
+    "title": "Mala Junta",
+    "artist": "Julio De Caro y su Sexteto",
+    "year": 1927,
+    "spotifyTrackId": "128Cll4VT5OT9fRn4OLM1J",
+    "description": "デ・カロの代表的な器楽タンゴ。洗練されたアレンジと複雑な対位法が印象的な前衛的名曲。",
+    "choices": [
+      { "title": "Mala Junta", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Boedo", "artist": "Julio De Caro y su Sexteto", "year": 1928 },
+      { "title": "Tierra Querida", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Flores Negras", "artist": "Julio De Caro y su Sexteto", "year": 1927 }
+    ]
+  },
+  {
+    "id": "51",
+    "title": "Tierra Querida",
+    "artist": "Julio De Caro y su Sexteto",
+    "year": 1927,
+    "spotifyTrackId": "32cXiE0iVL9yAWbiqesQay",
+    "description": "デ・カロが愛国心を込めて作曲した叙情的な器楽タンゴ。美しいヴァイオリンの旋律が印象的。",
+    "choices": [
+      { "title": "Tierra Querida", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Boedo", "artist": "Julio De Caro y su Sexteto", "year": 1928 },
+      { "title": "Mala Junta", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Flores Negras", "artist": "Julio De Caro y su Sexteto", "year": 1927 }
+    ]
+  },
+  {
+    "id": "52",
+    "title": "Flores Negras",
+    "artist": "Julio De Caro y su Sexteto",
+    "year": 1927,
+    "spotifyTrackId": "5IBVaEBmDFUUT9pJCUshNq",
+    "description": "デ・カロの知的なスタイルを代表する器楽タンゴ。複雑な和声と独創的なアレンジが特徴。",
+    "choices": [
+      { "title": "Flores Negras", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Boedo", "artist": "Julio De Caro y su Sexteto", "year": 1928 },
+      { "title": "Mala Junta", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Tierra Querida", "artist": "Julio De Caro y su Sexteto", "year": 1927 }
+    ]
+  },
+  {
+    "id": "53",
+    "title": "El Monito",
+    "artist": "Julio De Caro y su Sexteto",
+    "year": 1924,
+    "spotifyTrackId": "2kkriXnbPqvQTNcmfFXEml",
+    "description": "デ・カロの初期の名曲。遊び心のあるタイトルと軽快なリズムが黄金期前のタンゴの魅力を伝える。",
+    "choices": [
+      { "title": "El Monito", "artist": "Julio De Caro y su Sexteto", "year": 1924 },
+      { "title": "Boedo", "artist": "Julio De Caro y su Sexteto", "year": 1928 },
+      { "title": "Mala Junta", "artist": "Julio De Caro y su Sexteto", "year": 1927 },
+      { "title": "Tierra Querida", "artist": "Julio De Caro y su Sexteto", "year": 1927 }
+    ]
+  },
+  {
+    "id": "54",
+    "title": "Vida Mía",
+    "artist": "Osvaldo Fresedo y su Orquesta Típica",
+    "year": 1935,
+    "spotifyTrackId": "76XaidrIeofWtfHVlseCez",
+    "description": "フレセドの洗練されたスタイルを代表する名曲。ロベルト・レイの歌声と優雅なオーケストラが融合。",
+    "choices": [
+      { "title": "Vida Mía", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1935 },
+      { "title": "Sollozos", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 },
+      { "title": "Buscándote", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 },
+      { "title": "Tanguango", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1933 }
+    ]
+  },
+  {
+    "id": "55",
+    "title": "Sollozos",
+    "artist": "Osvaldo Fresedo y su Orquesta Típica",
+    "year": 1942,
+    "spotifyTrackId": "5XLnJwqx7GMzA93wTcPFwO",
+    "description": "フレセドの抒情的なスタイルが際立つ名曲。哀愁漂うメロディと洗練されたアレンジが特徴。",
+    "choices": [
+      { "title": "Sollozos", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 },
+      { "title": "Vida Mía", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1935 },
+      { "title": "Buscándote", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 },
+      { "title": "Canto de Amor", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1941 }
+    ]
+  },
+  {
+    "id": "56",
+    "title": "Buscándote",
+    "artist": "Osvaldo Fresedo y su Orquesta Típica",
+    "year": 1942,
+    "spotifyTrackId": "1GpbTeS3JX4RmUOiPytaQ8",
+    "description": "フレセドの優雅なスタイルが楽しめる一曲。「あなたを探して」という歌詞が切ない恋の情景を描く。",
+    "choices": [
+      { "title": "Buscándote", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 },
+      { "title": "Vida Mía", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1935 },
+      { "title": "Sollozos", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 },
+      { "title": "Tanguango", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1933 }
+    ]
+  },
+  {
+    "id": "57",
+    "title": "Canto de Amor",
+    "artist": "Osvaldo Fresedo y su Orquesta Típica",
+    "year": 1941,
+    "spotifyTrackId": "0og6ZdEu8uJjueMTkM0ryG",
+    "description": "フレセドが愛をテーマに作曲した叙情的な名曲。柔らかく優美なオーケストラサウンドが印象的。",
+    "choices": [
+      { "title": "Canto de Amor", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1941 },
+      { "title": "Vida Mía", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1935 },
+      { "title": "Sollozos", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 },
+      { "title": "Buscándote", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 }
+    ]
+  },
+  {
+    "id": "58",
+    "title": "Tanguango",
+    "artist": "Osvaldo Fresedo y su Orquesta Típica",
+    "year": 1933,
+    "spotifyTrackId": "1n8lxXgTIuz2DWeVgHZR6S",
+    "description": "フレセドの初期を代表する器楽タンゴ。タンゴとルンバを融合させた独創的なスタイルが特徴。",
+    "choices": [
+      { "title": "Tanguango", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1933 },
+      { "title": "Vida Mía", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1935 },
+      { "title": "Sollozos", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 },
+      { "title": "Buscándote", "artist": "Osvaldo Fresedo y su Orquesta Típica", "year": 1942 }
+    ]
   }
 ]
