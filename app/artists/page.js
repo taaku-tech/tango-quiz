@@ -1,4 +1,5 @@
 import Link from "next/link";
+import songsData from "@/data/songs.json";
 
 const artists = [
   {
@@ -154,6 +155,9 @@ const artists = [
 ];
 
 export default function ArtistsPage() {
+  const songCount = {};
+  songsData.forEach((s) => { songCount[s.artist] = (songCount[s.artist] || 0) + 1; });
+
   return (
     <div
       className="min-h-screen px-4 py-8"
@@ -267,6 +271,21 @@ export default function ArtistsPage() {
                 ))}
               </div>
             </div>
+
+            {/* Quiz button (only if 4+ songs in data) */}
+            {songCount[artist.name] >= 4 && (
+              <Link
+                href={`/artist-quiz?artist=${encodeURIComponent(artist.name)}`}
+                className="block w-full py-3 rounded-xl text-sm font-semibold text-center border-2 transition-all duration-150 active:scale-[0.97]"
+                style={{
+                  backgroundColor: "#8B0000",
+                  borderColor: "#C9A84C",
+                  color: "#C9A84C",
+                }}
+              >
+                🎵 この演奏家のクイズ
+              </Link>
+            )}
           </div>
         ))}
       </div>

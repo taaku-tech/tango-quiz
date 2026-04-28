@@ -136,6 +136,18 @@ export default function TitleScreen({ onStart }) {
           href="/artists"
           className="block w-full py-3 rounded-xl text-sm font-semibold tracking-wider text-center transition-all duration-200 active:scale-[0.97] border-2"
           style={{
+            backgroundColor: "#3D0000",
+            borderColor: "#C9A84C",
+            color: "#C9A84C",
+          }}
+        >
+          🎼 演奏家別クイズ
+        </Link>
+
+        <Link
+          href="/artists"
+          className="block w-full py-3 rounded-xl text-sm font-semibold tracking-wider text-center transition-all duration-200 active:scale-[0.97] border-2"
+          style={{
             backgroundColor: "transparent",
             borderColor: "#8B0000",
             color: "#C9A84C",
