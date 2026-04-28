@@ -181,17 +181,6 @@ export default function ArtistsPage() {
             アルゼンチンタンゴを代表する15名の演奏家
           </p>
           <div className="w-16 h-px mx-auto mt-3" style={{ backgroundColor: "#8B0000" }} />
-          <Link
-            href="/lineage"
-            className="inline-flex items-center justify-center w-full py-3 rounded-xl text-sm font-semibold border transition-all duration-150 active:scale-[0.97]"
-            style={{
-              backgroundColor: "#8B0000",
-              borderColor: "#C9A84C",
-              color: "#C9A84C",
-            }}
-          >
-            🎼 楽団の系譜図を見る
-          </Link>
         </div>
 
         {artists.map((artist) => (
