@@ -18,7 +18,7 @@ function shuffleArray(array) {
 }
 
 function generateChoices(currentSong, allSongs) {
-  const toChoice = (s) => ({ title: s.title, artist: s.artist, year: s.year });
+  const toChoice = (s) => ({ title: s.title, titleJa: s.titleJa, artist: s.artist, year: s.year });
   const usedTitles = new Set([currentSong.title]);
 
   // 1. Same artist, different title (fallback: any different-artist song)

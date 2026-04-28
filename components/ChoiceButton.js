@@ -19,17 +19,20 @@ export default function ChoiceButton({ choice, isCorrect, isWrong, disabled, onC
     };
 
     const u1 = make(choice.title, "es-ES");
-    const u2 = make(choice.artist, "es-ES");
-    const u3 = make(`${choice.year}年`, "ja-JP");
+    const u2 = make(choice.titleJa || "", "ja-JP");
+    const u3 = make(choice.artist, "es-ES");
+    const u4 = make(`${choice.year}年`, "ja-JP");
 
     u1.onstart = () => setSpeaking(true);
     u1.onend = () => window.speechSynthesis.speak(u2);
     u2.onend = () => window.speechSynthesis.speak(u3);
-    u3.onend = () => setSpeaking(false);
+    u3.onend = () => window.speechSynthesis.speak(u4);
+    u4.onend = () => setSpeaking(false);
 
     u1.onerror = () => setSpeaking(false);
     u2.onerror = () => setSpeaking(false);
     u3.onerror = () => setSpeaking(false);
+    u4.onerror = () => setSpeaking(false);
 
     window.speechSynthesis.speak(u1);
   };
@@ -61,6 +64,11 @@ export default function ChoiceButton({ choice, isCorrect, isWrong, disabled, onC
           {isCorrect && <span className="mr-1">✓</span>}
           {choice.title}
         </p>
+        {choice.titleJa && (
+          <p className="text-xs mt-0.5 leading-snug" style={{ color: "#C9A84C" }}>
+            {choice.titleJa}
+          </p>
+        )}
         <p className="text-xs mt-1 leading-snug" style={{ opacity: 0.7 }}>
           {choice.artist}
         </p>
