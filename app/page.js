@@ -17,6 +17,29 @@ function shuffleArray(array) {
   return arr;
 }
 
+function generateChoices(currentSong, allSongs) {
+  const toChoice = (s) => ({ title: s.title, artist: s.artist, year: s.year });
+  const usedTitles = new Set([currentSong.title]);
+
+  // 1. Same artist, different title (fallback: any different-artist song)
+  const sameArtistPool = allSongs.filter(
+    (s) => s.artist === currentSong.artist && !usedTitles.has(s.title)
+  );
+  const sameArtistPick =
+    sameArtistPool.length > 0
+      ? shuffleArray(sameArtistPool)[0]
+      : shuffleArray(allSongs.filter((s) => s.artist !== currentSong.artist && !usedTitles.has(s.title)))[0];
+  usedTitles.add(sameArtistPick.title);
+
+  // 2. Two different-artist songs not already used
+  const diffPool = shuffleArray(
+    allSongs.filter((s) => s.artist !== currentSong.artist && !usedTitles.has(s.title))
+  );
+  const others = diffPool.slice(0, 2);
+
+  return shuffleArray([toChoice(currentSong), toChoice(sameArtistPick), ...others.map(toChoice)]);
+}
+
 export default function Home() {
   const [showTitle, setShowTitle] = useState(true);
   const [questions, setQuestions] = useState([]);
@@ -30,7 +53,11 @@ export default function Home() {
 
   const initQuiz = useCallback(() => {
     const shuffled = shuffleArray(songsData);
-    setQuestions(shuffled.slice(0, Math.min(10, shuffled.length)));
+    const withChoices = shuffled.slice(0, Math.min(10, shuffled.length)).map((song) => ({
+      ...song,
+      choices: generateChoices(song, songsData),
+    }));
+    setQuestions(withChoices);
     setCurrentIndex(0);
     setScore(0);
     setAnswered(false);
