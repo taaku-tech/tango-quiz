@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>アルゼンチンタンゴ楽団 系譜図</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #0c0101; overflow: hidden; }
+    #root { width: 100%; height: 100%; display: flex; flex-direction: column; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0c0101; }
+    ::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useRef, useEffect } = React;
+
+    /* ─────────────────── LAYOUT ─────────────────── */
+    const YR0 = 1897, YR1 = 1998;
+    const CW = 2400, CH = 800;
+    const ML = 140, MT = 70, MR = 60, MB = 80;
+
+    const yrX = (y) => ML + (y - YR0) / (YR1 - YR0) * (CW - ML - MR);
+    const lnY = (l) => MT + (l - 1) * 64;
+
+    /* ─────────────────── DATA ─────────────────── */
+    /* lane 1 = top, lane 10 = bottom */
+    const NODES = [
+      // ── 草創期 ──
+      { id: 'villoldo',  name: 'アンヘル\nビジョルド',     year: 1898, lane: 2,  note: '（1861–1919）アルゼンチン・タンゴの草創期を代表する作曲家・歌手。「エル・チョクロ」（1903）「ラ・モロチャ」など不朽の名曲を残した。タンゴを音楽として世に広めた最初の人物の一人。' },
+      { id: 'firpo',     name: 'ロベルト\nフィルポ',       year: 1908, lane: 4,  note: '（1884–1969）ピアノ奏者・楽団長。フリオ・デ・カロの師として知られ、タンゴの器楽化・芸術化に貢献。「カミニート」の編曲でも有名。長きにわたりタンゴ界の中心に立ち続けた。' },
+      { id: 'canaro',    name: 'フランシスコ\nカナロ',     year: 1907, lane: 7,  note: '（1888–1964）ウルグアイ出身の楽団長・作曲家・ヴァイオリン奏者。生涯で5000曲以上を録音した最多作の人物。ダリエンソなど多くの後進を育て、タンゴの商業的普及に最も寄与した。' },
+      { id: 'robaudy',   name: 'カルロス\nロバウディ',    year: 1912, lane: 10, note: '草創期のタンゴ楽団長。1910年代のブエノスアイレスで活躍し、タンゴをカフェや舞踏会に普及させた初期の演奏家の一人。' },
+
+      // ── デ・カロ時代 ──
+      { id: 'fresedo',   name: 'オスバルド\nフレセド',    year: 1920, lane: 6,  note: '（1897–1984）「タンゴの貴公子」と呼ばれた洗練されたスタイルの楽団長。バイオリン奏者として繊細な音楽性を持ち、上流階級のサロンでも愛された。1920年代から60年以上にわたり活躍した。' },
+      { id: 'lomuto',    name: 'フランシスコ\nロムート',  year: 1921, lane: 9,  note: '（1893–1950）ピアノ奏者・楽団長。踊りやすいリズムを重視した楽団として人気を博し、1920〜30年代のミロンガ（ダンスホール）で広く演奏された。' },
+      { id: 'decaro',    name: 'フリオ\nデ・カロ',        year: 1924, lane: 4,  note: '（1899–1980）「タンゴ革新の父」。フィルポ楽団出身。タンゴを単なる踊りの伴奏から芸術音楽へと昇華させた。バンドネオン2本・ヴァイオリン2本・ピアノ・コントラバスの六重奏編成を確立し、その影響は後の全楽団に及ぶ。' },
+      { id: 'maffia',    name: 'ペドロ\nマフィア',        year: 1925, lane: 3,  note: '（1899–1967）デ・カロ楽団出身のバンドネオン奏者・作曲家。タンゴの演奏技法を高め、後進の育成にも尽力。楽器の表現可能性を大きく広げた演奏家として評価される。' },
+      { id: 'donato',    name: 'エドガルド\nドナート',    year: 1926, lane: 2,  note: '（1897–1963）ヴァイオリン奏者・楽団長。リズミカルで躍動感あふれる独自のスタイルを確立。「ラ・カンパルシータ」の編曲でも知られ、黄金時代への橋渡し役を果たした。' },
+      { id: 'disarli',   name: 'カルロス\nディ・サルリ',  year: 1928, lane: 8,  note: '（1903–1960）「エル・セニョール・デル・タンゴ（タンゴの君主）」。ピアノ奏者・楽団長。クリアで優雅なピアノと流麗なヴァイオリンが特徴。サロン・タンゴの美学を極めた。' },
+      { id: 'laurenz',   name: 'ペドロ\nラウレンス',      year: 1929, lane: 3,  note: '（1902–1972）デ・カロ楽団出身のバンドネオン奏者・作曲家・楽団長。深みのある音色と複雑な和声を駆使した知性的な演奏で知られ、マフィアと並ぶデ・カロ系の名手。' },
+
+      // ── 黄金時代前期 ──
+      { id: 'darienzo',  name: 'フアン\nダリエンソ',      year: 1935, lane: 7,  note: 'Juan D\'Arienzo。「リズムの王様」。カナロ楽団出身。' },
+      { id: 'carabajal', name: 'ロドルフォ\nカラバハル',   year: 1934, lane: 10, note: '1930年代に活躍したバンドネオン奏者・楽団長。黄金時代前夜のブエノスアイレスのカフェやダンスホールで演奏し、タンゴの普及に貢献した。' },
+      { id: 'rodrigueE', name: 'エンリケ\nロドリゲス',     year: 1938, lane: 9,  note: '（1901–1971）バンドネオン奏者・楽団長。明るく軽快で踊りやすいスタイルが特徴。歌手アルマンド・モレノとのコンビで多くのヒット曲を残した。黄金時代の大衆的人気を誇った楽団の一つ。' },
+      { id: 'tanturi',   name: 'リカルド\nタンツーリ',    year: 1941, lane: 9,  note: '（1905–1973）ピアノ奏者・楽団長。名歌手アルベルト・カスティージョとのコンビで1940年代に絶大な人気を博した。踊りやすいリズムと歌謡性を兼ね備えた黄金時代を代表する楽団の一つ。' },
+      { id: 'troilo',    name: 'アニバル\nトロイロ',      year: 1937, lane: 5,  note: '（1914–1975）愛称「ピチュコ」。黄金時代最大の楽団長・バンドネオン奏者。深く人間的な音楽はタンゴの精神を体現するとも言われる。ピアソーラ、フランシーニ、ポンティエルなど多くの名演奏家を育てた。' },
+      { id: 'biagi',     name: 'ロドルフォ\nビアヒ',       year: 1938, lane: 6,  note: '（1906–1969）「マノス・ブルハス（魔法の手）」と呼ばれたピアノ奏者・楽団長。ダリエンソ楽団出身。鋭いスタッカートと独特のリズム感でダリエンソ以上に激しいビートを実現。ダンサーから特に愛された。' },
+      { id: 'pugliese',  name: 'オスバルド\nプグリエーセ', year: 1939, lane: 4,  note: '（1905–1995）ピアノ奏者・楽団長。重厚で劇的、複雑なリズムパターンを特徴とする「プグリエーセ・スタイル」を確立。左翼的政治信条から当局に弾圧を受けた時代もあったが演奏を続け、90年の生涯をタンゴに捧げた。' },
+      { id: 'varela',    name: 'カルロス\nバレラ',         year: 1936, lane: 10, note: '1930年代末から活躍した楽団長。黄金時代のブエノスアイレスのダンスホールで活動し、タンゴの踊り文化を支えた演奏家の一人。' },
+
+      // ── 黄金時代後期 ──
+      { id: 'demare',    name: 'ルシオ\nデ・マーレ',       year: 1940, lane: 3,  note: '（1906–1974）ピアノ奏者・作曲家・楽団長。詩的で叙情的なスタイルが特徴。歌手ロベルト・ルフィーノとのコンビで多くの名録音を残した。タンゴに文学的な深みをもたらした芸術家の一人。' },
+      { id: 'calo',      name: 'ミゲル\nカロ',             year: 1940, lane: 6,  note: '（1907–1972）バンドネオン奏者・楽団長。「オルケスタ・デ・ラス・エストレジャス（スターたちの楽団）」と称され、アルフレド・ゴビ、オラシオ・サルガンらを輩出。トロイロ楽団と並ぶ黄金時代の名門。' },
+      { id: 'gobbi',     name: 'アルフレド\nゴビ',          year: 1943, lane: 2,  note: '（1912–1965）ヴァイオリン奏者・楽団長。カロ楽団出身。繊細で感情豊かな演奏スタイルを持つ。妻でありタンゴの名歌手フローラ・ロドンとのコンビは伝説的。早逝が惜しまれる才人。' },
+      { id: 'salgan',    name: 'オラシオ\nサルガン',       year: 1944, lane: 8,  note: '（1916–2016）ピアノ奏者・作曲家・楽団長。カロ楽団出身。クラシック音楽とジャズの要素を大胆に取り入れた革新的なスタイルで知られる。100歳まで演奏を続けた長寿の巨匠。' },
+      { id: 'francini',  name: 'フランシーニ\n=ポンティエル', year: 1946, lane: 5, note: 'エンリケ・フランシーニ（1916–1978、Vn）とアルマンド・ポンティエル（1918–1980、Bn）。ともにトロイロ楽団出身の名手コンビ。均整のとれた洗練されたアンサンブルで黄金時代の終盤に多くの名録音を残した。' },
+
+      // ── ピアソーラ時代 ──
+      { id: 'piaz55',    name: 'アストル・ピアソーラ\nBsAs八重奏団', year: 1955, lane: 5, note: '（1921–1992）バンドネオン奏者・作曲家。トロイロ楽団での修業後、1955年に「ブエノスアイレス八重奏団」を結成。ジャズ・クラシックの対位法を融合した「ヌエボ・タンゴ」を創始し、タンゴを世界的な芸術音楽へと押し上げた。' },
+      { id: 'piaz61',    name: 'アストル・ピアソーラ\n前期Quinteto', year: 1961, lane: 5, note: 'アストル・ピアソーラ 前期クインテット（1961年頃）。バンドネオン・ヴァイオリン・ピアノ・エレキギター・コントラバスの五重奏編成を確立。パリ留学後の円熟したスタイルで「アディオス・ノニーノ」など代表作を多数発表。' },
+      { id: 'piaz70',    name: 'アストル・ピアソーラ\n後期Quinteto', year: 1970, lane: 5, note: 'アストル・ピアソーラ 後期クインテット（1970年代）。円熟の最盛期。「リベルタンゴ」（1974）をはじめ多くの代表作を生み出した。国際的な評価が高まり、世界中でコンサートを行った時期。' },
+      { id: 'mederos',   name: 'ロドルフォ\nメデロス',     year: 1972, lane: 4,  note: '（1940– ）バンドネオン奏者・作曲家・楽団長。プグリエーセの重厚なスタイルに影響を受けつつ、独自の現代的タンゴを追求。アルゼンチン国内での評価は特に高く、タンゴの知的継承者の一人とされる。' },
+      { id: 'sexteto',   name: 'セステート\nマヨール',    year: 1975, lane: 9,  note: '1970年代に結成された六重奏団。黄金時代のスタイルを高い演奏技術で再現し、世界中のタンゴファンに愛された。伝統的な編成・奏法を守りながら国際的な普及に大きく貢献した。' },
+      { id: 'saluzzi',   name: 'ディノ\nサルッシ',         year: 1976, lane: 3,  note: '（1935– ）バンドネオン奏者・作曲家。アルゼンチン北部フォルクローレの要素とジャズ・現代音楽を融合した極めて個性的なスタイル。ECMレーベルからの録音で世界的に知られる。タンゴの枠を超えた20世紀の音楽巨人。' },
+      { id: 'troiloLt',  name: 'アニバル・トロイロ\n(晩年)',year: 1972, lane: 6,  note: 'アニバル・トロイロ 晩年の楽団（1970年代初頭）。老いてなお衰えぬ音楽性で多くのファンを魅了し続けた。1975年5月18日、ブエノスアイレスにて逝去。その死はアルゼンチン全土が悼んだ。' },
+      { id: 'piaz82',    name: 'アストル・ピアソーラ\nNuevo Quinteto', year: 1982, lane: 5, note: 'アストル・ピアソーラ ヌエボ・クインテット（1982–92）。キケ・シノージ（Vn）、パブロ・ジーグレル（Pf）らを擁した集大成の時期。「ブエノスアイレスのマリア」など大作を発表。1992年逝去。' },
+      { id: 'nuevo',     name: 'ヌエボ・タンゴ\n各楽団',  year: 1993, lane: 5,  note: '1990年代以降に世界各地で生まれたヌエボ・タンゴの諸楽団。ピアソーラの遺産を受け継ぎながら、さらにジャズ・クラシック・ワールドミュージックと融合。タンゴはブエノスアイレスを超えた世界的な音楽ジャンルへと発展した。' },
+    ];
+
+    const EDGES = [
+      // Founding
+      { from: 'villoldo',  to: 'firpo',     type: 'dashed' },
+      { from: 'firpo',     to: 'canaro',    type: 'dashed' },
+      // Firpo lineage
+      { from: 'firpo',     to: 'decaro',    type: 'solid'  },
+      { from: 'firpo',     to: 'fresedo',   type: 'dashed' },
+      // De Caro lineage
+      { from: 'decaro',    to: 'maffia',    type: 'solid'  },
+      { from: 'decaro',    to: 'laurenz',   type: 'solid'  },
+      { from: 'decaro',    to: 'pugliese',  type: 'dashed' },
+      { from: 'decaro',    to: 'demare',    type: 'dashed' },
+      { from: 'decaro',    to: 'disarli',   type: 'dashed' },
+      // Canaro lineage
+      { from: 'canaro',    to: 'lomuto',    type: 'solid'  },
+      { from: 'canaro',    to: 'darienzo',  type: 'solid'  },
+      // Fresedo
+      { from: 'fresedo',   to: 'donato',    type: 'dashed' },
+      { from: 'fresedo',   to: 'calo',      type: 'dashed' },
+      // D'Arienzo
+      { from: 'darienzo',  to: 'biagi',     type: 'solid'  },
+      { from: 'darienzo',  to: 'salgan',    type: 'dashed' },
+      // Di Sarli
+      { from: 'disarli',   to: 'rodrigueE', type: 'dashed' },
+      // Lomuto
+      { from: 'lomuto',    to: 'rodrigueE', type: 'dashed' },
+      // Troilo lineage (central)
+      { from: 'troilo',    to: 'piaz55',    type: 'solid'  },
+      { from: 'troilo',    to: 'francini',  type: 'solid'  },
+      { from: 'troilo',    to: 'gobbi',     type: 'dashed' },
+      { from: 'troilo',    to: 'calo',      type: 'dashed' },
+      { from: 'troilo',    to: 'troiloLt',  type: 'solid'  },
+      // Pugliese lineage
+      { from: 'pugliese',  to: 'mederos',   type: 'dashed' },
+      { from: 'pugliese',  to: 'sexteto',   type: 'dashed' },
+      // Piazzolla continuity
+      { from: 'piaz55',    to: 'piaz61',    type: 'solid'  },
+      { from: 'piaz61',    to: 'piaz70',    type: 'solid'  },
+      { from: 'piaz70',    to: 'piaz82',    type: 'solid'  },
+      { from: 'piaz82',    to: 'nuevo',     type: 'solid'  },
+    ];
+
+    /* ─────────────────── COLORS ─────────────────── */
+    const GOLD      = '#c9a84c';
+    const GOLD_LT   = '#f0d880';
+    const CREAM     = '#f5e6c8';
+    const NODE_DARK = '#1a0404';
+    const NODE_SEL  = '#5c1010';
+    const NODE_CON  = '#2d0808';
+
+    /* ─────────────────── EDGE COMPONENT ─────────────────── */
+    function EdgePath({ from, to, type, active, faded }) {
+      const x1 = yrX(from.year), y1 = lnY(from.lane);
+      const x2 = yrX(to.year),   y2 = lnY(to.lane);
+      const mx = (x1 + x2) / 2;
+      const d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
+      const color   = active ? GOLD_LT : (type === 'solid' ? GOLD : '#8a7040');
+      const opacity = faded  ? 0.08 : (active ? 1 : (type === 'solid' ? 0.6 : 0.3));
+      const sw      = active ? 2.5 : 1.2;
+      return (
+        <path d={d} fill="none" stroke={color} strokeWidth={sw}
+          strokeDasharray={type === 'dashed' ? '6,5' : undefined}
+          opacity={opacity} />
+      );
+    }
+
+    /* ─────────────────── NODE COMPONENT ─────────────────── */
+    function OrchestraNode({ node, isSelected, isConnected, isIdle, onClick }) {
+      const cx = yrX(node.year), cy = lnY(node.lane);
+      const lines = node.name.split('\n');
+      const r = 34;
+      const fs = lines.length === 1 ? 9.5 : lines.length === 2 ? 8 : 7;
+      const lh = fs + 2.5;
+
+      return (
+        <g transform={`translate(${cx},${cy})`}
+          onClick={(e) => { e.stopPropagation(); onClick(node.id); }}
+          style={{ cursor: 'pointer' }}>
+          {/* Glow ring for selected */}
+          {isSelected && (
+            <circle r={r + 7} fill="none" stroke={GOLD_LT} strokeWidth="1" opacity="0.25" />
+          )}
+          <circle r={r}
+            fill={isSelected ? NODE_SEL : isConnected ? NODE_CON : NODE_DARK}
+            stroke={isSelected ? GOLD_LT : GOLD}
+            strokeWidth={isSelected ? 2.5 : 1.5}
+            opacity={isIdle ? 0.3 : 1} />
+          {lines.map((line, i) => (
+            <text key={i}
+              x="0" y={(i - (lines.length - 1) / 2) * lh}
+              textAnchor="middle" dominantBaseline="middle"
+              fontSize={fs} fill={isIdle ? 'rgba(245,230,200,0.25)' : CREAM}
+              fontFamily="'Noto Serif JP', serif" fontWeight="400">
+              {line}
+            </text>
+          ))}
+        </g>
+      );
+    }
+
+    /* ─────────────────── MAIN COMPONENT ─────────────────── */
+    function TangoChart() {
+      const [selected, setSelected] = useState(null);
+      const [tx, setTx] = useState(-40);
+      const [ty, setTy] = useState(0);
+      const [scale, setScale] = useState(0.72);
+      const isDragging = useRef(false);
+      const lastPos = useRef({ x: 0, y: 0 });
+      const hasMoved = useRef(false);
+      const containerRef = useRef(null);
+
+      const nodeMap = {};
+      NODES.forEach(n => (nodeMap[n.id] = n));
+
+      const connectedSet = new Set();
+      const activeEdgeSet = new Set();
+      if (selected) {
+        connectedSet.add(selected);
+        EDGES.forEach((e, i) => {
+          if (e.from === selected || e.to === selected) {
+            connectedSet.add(e.from);
+            connectedSet.add(e.to);
+            activeEdgeSet.add(i);
+          }
+        });
+      }
+      const hasSel = selected !== null;
+
+      const onMouseDown = (e) => {
+        isDragging.current = true;
+        hasMoved.current = false;
+        lastPos.current = { x: e.clientX, y: e.clientY };
+      };
+      const onMouseMove = (e) => {
+        if (!isDragging.current) return;
+        const dx = e.clientX - lastPos.current.x;
+        const dy = e.clientY - lastPos.current.y;
+        if (Math.abs(dx) > 2 || Math.abs(dy) > 2) hasMoved.current = true;
+        setTx(t => t + dx);
+        setTy(t => t + dy);
+        lastPos.current = { x: e.clientX, y: e.clientY };
+      };
+      const onMouseUp = () => { isDragging.current = false; };
+      const onWheel = (e) => {
+        e.preventDefault();
+        const f = e.deltaY > 0 ? 0.92 : 1.08;
+        setScale(s => Math.max(0.25, Math.min(3, s * f)));
+      };
+      const onBgClick = () => {
+        if (!hasMoved.current) setSelected(null);
+      };
+      const onNodeClick = (id) => {
+        if (!hasMoved.current) setSelected(p => p === id ? null : id);
+      };
+
+      const YEARS = [];
+      for (let y = 1900; y <= 1998; y += 10) YEARS.push(y);
+
+      const ERAS = [
+        { label: '草創期',        start: 1897, end: 1923, },
+        { label: 'デ・カロ時代',  start: 1923, end: 1934, },
+        { label: '黄金時代',      start: 1934, end: 1956, },
+        { label: '過渡期',        start: 1956, end: 1969, },
+        { label: 'ヌエボ・タンゴ', start: 1969, end: 1998, },
+      ];
+
+      const TOP_Y  = lnY(1) - 40;
+      const BOT_Y  = lnY(10) + 40;
+
+      const selNode = selected ? nodeMap[selected] : null;
+      const selIn   = selNode ? EDGES.filter(e => e.to   === selected).map(e => nodeMap[e.from]?.name.replace(/\n/g, '')) : [];
+      const selOut  = selNode ? EDGES.filter(e => e.from === selected).map(e => nodeMap[e.to]  ?.name.replace(/\n/g, '')) : [];
+
+      return (
+        <div style={{ width: '100vw', height: '100vh', background: '#0c0101', display: 'flex', flexDirection: 'column', fontFamily: "'Noto Serif JP', serif", userSelect: 'none' }}>
+
+          {/* ── HEADER ── */}
+          <div style={{ padding: '13px 28px', borderBottom: '1px solid rgba(201,168,76,0.18)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+            <div>
+              <div style={{ fontSize: 17, color: GOLD, letterSpacing: '0.18em', fontWeight: 700, textWrap: 'nowrap' }}>
+                アルゼンチンタンゴ楽団　系譜・師弟・親交図
+              </div>
+              <div style={{ fontSize: 10.5, color: 'rgba(201,168,76,0.42)', letterSpacing: '0.28em', marginTop: 3 }}>
+                ARGENTINE TANGO ORCHESTRAS GENEALOGY　（1900 — 1998）
+              </div>
+            </div>
+            <div style={{ display: 'flex', gap: 20, alignItems: 'center', flexShrink: 0 }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, color: 'rgba(245,230,200,0.55)' }}>
+                <svg width={34} height={10} style={{ display: 'block' }}>
+                  <line x1="0" y1="5" x2="34" y2="5" stroke={GOLD} strokeWidth="1.5" />
+                </svg>
+                師弟関係
+              </span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 11, color: 'rgba(245,230,200,0.55)' }}>
+                <svg width={34} height={10} style={{ display: 'block' }}>
+                  <line x1="0" y1="5" x2="34" y2="5" stroke="#8a7040" strokeWidth="1.5" strokeDasharray="6,5" />
+                </svg>
+                親交関係
+              </span>
+              <span style={{ fontSize: 10, color: 'rgba(201,168,76,0.32)', marginLeft: 10, lineHeight: 1.6, textAlign: 'right' }}>
+                ドラッグ：移動　ホイール：ズーム<br/>
+                楽団名クリック：関係表示
+              </span>
+            </div>
+          </div>
+
+          {/* ── CHART AREA ── */}
+          <div ref={containerRef} style={{ flex: 1, overflow: 'hidden', position: 'relative' }}
+            onMouseDown={onMouseDown} onMouseMove={onMouseMove}
+            onMouseUp={onMouseUp} onMouseLeave={onMouseUp}
+            onWheel={onWheel}>
+
+            <svg width={CW} height={CH} onClick={onBgClick}
+              style={{ transformOrigin: '0 0', transform: `translate(${tx}px,${ty}px) scale(${scale})`, cursor: 'grab', display: 'block' }}>
+
+              <rect width={CW} height={CH} fill="transparent" />
+
+              {/* Era bands */}
+              {ERAS.map((era, i) => {
+                const x = yrX(era.start);
+                const w = yrX(era.end) - x;
+                const colors = [
+                  'rgba(255,210,120,0.025)',
+                  'rgba(220,130,70,0.035)',
+                  'rgba(200,80,50,0.045)',
+                  'rgba(100,80,160,0.03)',
+                  'rgba(60,40,120,0.045)',
+                ];
+                return (
+                  <g key={era.label}>
+                    <rect x={x} y={TOP_Y} width={w} height={BOT_Y - TOP_Y} fill={colors[i]} />
+                    <line x1={x} y1={TOP_Y} x2={x} y2={BOT_Y} stroke={GOLD} strokeWidth="0.4" opacity="0.12" />
+                    <text x={x + w / 2} y={BOT_Y + 22} textAnchor="middle" fontSize="9.5"
+                      fill={GOLD} opacity="0.35" fontFamily="'Noto Serif JP', serif">{era.label}</text>
+                  </g>
+                );
+              })}
+
+              {/* Grid lines + year labels */}
+              {YEARS.map(y => (
+                <g key={y}>
+                  <line x1={yrX(y)} y1={TOP_Y} x2={yrX(y)} y2={BOT_Y}
+                    stroke={GOLD} strokeWidth="0.3" opacity="0.18" />
+                  <text x={yrX(y)} y={TOP_Y - 10} textAnchor="middle" fontSize="11"
+                    fill={GOLD} opacity="0.55" fontFamily="'Noto Serif JP', serif">{y}</text>
+                </g>
+              ))}
+
+              {/* Bottom axis */}
+              <line x1={yrX(YR0) - 10} y1={BOT_Y + 8} x2={yrX(YR1) + 10} y2={BOT_Y + 8}
+                stroke={GOLD} strokeWidth="0.5" opacity="0.22" />
+
+              {/* ── EDGES ── */}
+              {EDGES.map((e, i) => {
+                const fn = nodeMap[e.from], tn = nodeMap[e.to];
+                if (!fn || !tn) return null;
+                return (
+                  <EdgePath key={i} from={fn} to={tn} type={e.type}
+                    active={activeEdgeSet.has(i)}
+                    faded={hasSel && !activeEdgeSet.has(i)} />
+                );
+              })}
+
+              {/* ── NODES ── */}
+              {NODES.map(n => (
+                <OrchestraNode key={n.id} node={n}
+                  isSelected={selected === n.id}
+                  isConnected={connectedSet.has(n.id) && selected !== n.id}
+                  isIdle={hasSel && !connectedSet.has(n.id)}
+                  onClick={onNodeClick} />
+              ))}
+            </svg>
+
+            {/* ── INFO PANEL ── */}
+            {selNode && (
+              <div style={{
+                position: 'absolute', bottom: 20, left: 20,
+                background: 'rgba(8,1,1,0.92)', border: `1px solid rgba(201,168,76,0.35)`,
+                padding: '14px 20px', minWidth: 240, maxWidth: 320,
+                backdropFilter: 'blur(10px)',
+              }}>
+                {/* Gold accent top */}
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: `linear-gradient(90deg, ${GOLD}, transparent)` }} />
+                <div style={{ fontSize: 15, color: GOLD_LT, fontWeight: 700, marginBottom: 6, letterSpacing: '0.05em' }}>
+                  {selNode.name.replace(/\n/g, '')}
+                </div>
+                <div style={{ fontSize: 10.5, color: 'rgba(201,168,76,0.5)', marginBottom: 10, letterSpacing: '0.1em' }}>
+                  活動開始：{selNode.year}年頃
+                </div>
+                {selNode.note && (
+                  <div style={{ fontSize: 10.5, color: 'rgba(245,230,200,0.65)', lineHeight: 1.65, marginBottom: 10, borderLeft: `2px solid rgba(201,168,76,0.3)`, paddingLeft: 8 }}>
+                    {selNode.note}
+                  </div>
+                )}
+                {selIn.length > 0 && (
+                  <div style={{ fontSize: 10.5, color: 'rgba(245,230,200,0.6)', marginBottom: 4 }}>
+                    <span style={{ color: 'rgba(201,168,76,0.7)', marginRight: 4 }}>←</span>
+                    {selIn.filter(Boolean).join('、')}
+                  </div>
+                )}
+                {selOut.length > 0 && (
+                  <div style={{ fontSize: 10.5, color: 'rgba(245,230,200,0.92)' }}>
+                    <span style={{ color: '#e8cc6a', marginRight: 4 }}>→</span>
+                    {selOut.filter(Boolean).join('、')}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* ── ZOOM CONTROLS ── */}
+            <div style={{ position: 'absolute', bottom: 20, right: 20, display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {[['＋', 1.2], ['－', 0.83]].map(([label, f]) => (
+                <button key={label}
+                  onClick={() => setScale(s => Math.max(0.25, Math.min(3, s * f)))}
+                  style={{
+                    width: 32, height: 32, background: 'rgba(8,1,1,0.85)',
+                    border: '1px solid rgba(201,168,76,0.3)', color: GOLD,
+                    fontSize: 16, cursor: 'pointer', fontFamily: 'inherit',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  }}>
+                  {label}
+                </button>
+              ))}
+              <button
+                onClick={() => { setScale(0.72); setTx(-40); setTy(0); }}
+                style={{
+                  width: 32, height: 32, background: 'rgba(8,1,1,0.85)',
+                  border: '1px solid rgba(201,168,76,0.3)', color: GOLD,
+                  fontSize: 9, cursor: 'pointer', fontFamily: 'inherit', lineHeight: 1.2,
+                }}>
+                全体
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<TangoChart />);
+  </script>
+</body>
+</html>

@@ -122,9 +122,9 @@ export default function QuizCard({ song, answered, selectedChoice, onAnswer }) {
               lineHeight: "1.7",
             }}
           >
-            金色の枠内の右下あたりに再生ボタンがあります。
+            金色の枠内の右下あたりに再生ボタンが隠れています。
             <br />
-            タップして音楽を再生してください🎵
+            それを探してタップして音楽を再生してください🎵
           </p>
           <p
             style={{
