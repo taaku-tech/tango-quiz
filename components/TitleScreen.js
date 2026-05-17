@@ -132,30 +132,17 @@ export default function TitleScreen({ onStart }) {
           ♪ クイズを始める
         </button>
 
-        <div className="flex gap-3">
-          <Link
-            href="/artists"
-            className="flex-1 py-3 rounded-xl text-sm font-semibold tracking-wider text-center transition-all duration-200 active:scale-[0.97] border-2"
-            style={{
-              backgroundColor: "transparent",
-              borderColor: "#8B0000",
-              color: "#C9A84C",
-            }}
-          >
-            🎼 演奏家紹介
-          </Link>
-          <Link
-            href="/lineage"
-            className="flex-1 py-3 rounded-xl text-sm font-semibold tracking-wider text-center transition-all duration-200 active:scale-[0.97] border-2"
-            style={{
-              backgroundColor: "transparent",
-              borderColor: "#8B0000",
-              color: "#C9A84C",
-            }}
-          >
-            🌳 楽団系譜図
-          </Link>
-        </div>
+        <Link
+          href="/artists"
+          className="block w-full py-3 rounded-xl text-sm font-semibold tracking-wider text-center transition-all duration-200 active:scale-[0.97] border-2"
+          style={{
+            backgroundColor: "transparent",
+            borderColor: "#8B0000",
+            color: "#C9A84C",
+          }}
+        >
+          🎼 演奏家紹介
+        </Link>
 
         <p className="text-xs" style={{ color: "#F5F0E8", opacity: 0.35 }}>
           全20曲からランダムに10問出題

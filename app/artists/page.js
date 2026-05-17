@@ -186,24 +186,7 @@ export default function ArtistsPage() {
           </p>
           <div className="w-16 h-px mx-auto mt-3" style={{ backgroundColor: "#8B0000" }} />
 
-          <Link
-            href="/lineage"
-            className="block w-full rounded-xl border-2 transition-all duration-150 active:scale-[0.97] overflow-hidden"
-            style={{ borderColor: "#C9A84C", backgroundColor: "#1a0a0a" }}
-          >
-            <div className="flex items-center gap-4 px-5 py-4">
-              <span style={{ fontSize: "28px", lineHeight: 1 }}>🌳</span>
-              <div className="text-left">
-                <p className="text-sm font-bold" style={{ color: "#C9A84C" }}>
-                  楽団の系譜図
-                </p>
-                <p className="text-xs mt-0.5 leading-relaxed" style={{ color: "#F5F0E8", opacity: 0.6 }}>
-                  師弟・親交関係を1900〜1998年で可視化
-                </p>
-              </div>
-              <span className="ml-auto text-base" style={{ color: "#8B0000" }}>→</span>
-            </div>
-          </Link>
+
         </div>
 
         {artists.map((artist) => (
